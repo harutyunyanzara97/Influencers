@@ -1,0 +1,128 @@
+.btn-header-view {
+    width: 106px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #FF2A13;
+    outline: none;
+    color: #FF2A13;
+}
+
+thead.client-list-thead tr th {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    color: #4C505F;
+}
+
+.th-profil {
+    padding-left: 30px!important;
+}
+
+.th-profil:after {
+    content: " ";
+    border-bottom-style: solid;
+    border-bottom-width:5px;
+    display:table-cell;
+    width:60px;
+    border-color: #FF2A13;
+    border-bottom-left-radius: 40%;
+    padding-top: 10px;
+}
+
+tbody.client-list-tbody {
+    background-color: #F5F7FB!important;
+}
+
+tbody.client-list-tbody tr td {
+    background-color: #F5F7FB!important;
+}
+
+
+tbody.client-list-tbody tr {
+    background-color: #F5F7FB!important;
+}
+
+.client-list-avatar {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+}
+
+.client-list-tbody-a-icons img {
+    width: 18px;
+    height: 18px;
+    margin-right: 33px;
+}
+
+
+.client-list-tbody-a-icons i {
+    font-size: 4px;
+    margin-right: 1px;
+    color: #4C505F;
+}
+
+.bg-light-green {
+    background: #18FF59;
+    padding: 1px 7px;
+}
+
+tbody.client-list-tbody tr td span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    color: #000000;
+    text-align: center;
+    margin-left: 7px;
+    border-radius: 0;
+}
+
+/* table */
+
+.table-scroll {
+	position:relative;
+	max-width:600px;
+	margin:auto;
+	overflow:hidden;
+}
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.table-scroll table {
+	width:100%;
+	margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
+}
+
+.table-scroll th, .table-scroll td {
+	padding:5px 10px;
+	background-color: #F5F7FB!important;
+	white-space:nowrap;
+	vertical-align:top;
+}
+.table-scroll thead, .table-scroll tfoot {
+	background-color: #F5F7FB!important;
+}
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+
+.clone .fixed-side {
+    background-color: #F5F7FB!important;
+    visibility:visible;
+}
+.clone thead, .clone tfoot{background:transparent;}
+

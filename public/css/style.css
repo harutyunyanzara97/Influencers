@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+a, a:hover, a:focus, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+button:focus {
+    outline: none!important;
+}
+.bg-img {
+    background-image: url("../../../Influencer-Networks-App-inner-pages/img/photo.png");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+.img-fluid {
+    /*max-width: 100%;*/
+    height: 100%;
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1;
+}
+.fs-13 {
+    font-size: 13px!important;
+}
+.bg-gradient {
+    background-image: url("../../../Influencer-Networks-App-inner-pages/img/freeTrial -bg.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1514px;
+
+}
+.bg-white-whit-shadow {
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px #13101F;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.bg-white-whit-shadow .tab-content{
+    padding: 39px 39px 48px;
+}
+.nav-tabs {
+    border: 0;
+}
+.nav-tabs .nav-link {
+    height: 100px;
+    font-size: 25px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #FF2A13;
+    background-color: #faf2f2;
+    border-color: transparent;
+    height: 100px;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+.fs-72-bold-white {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 80px;
+    color: #FAF2F2;
+}
+
+.fs-24-bold-black {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+    text-align: center;
+}
+.fs-18-gray {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #656565;
+}
+.fs-18-gray-med {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #4C505F;
+}
+.fs-14-gray {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #656565;
+}
+.fs-14-black {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+}
+.fs-12-gray {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #646464;
+}
+.fs-23 {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 31px;
+}
+.fs-23-gray {
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 31px;
+    color: #A6A6A6;
+}
+.fs-45 {
+    font-size: 45px;
+    line-height: 84px;
+}
+.content-header {
+    margin-left:100px;
+}
+.form-control.pr-input {
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 35px !important;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.form-control.pr-input::placeholder {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #A6A6A6;
+}
+
+.angle-down {
+    position: absolute;
+    right: 30px;
+    top: 48px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-overflow: '';
+}
+.rightSide-content  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 100px 77px  15px;
+}
+.chat.abs {
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+}
+.white-space {
+    width: 162px;
+    height: 152px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(196, 196, 196, 0.8);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+.white-space:hover {
+    border: 1px solid #FF2A13;
+    box-shadow: none;
+}
+.error {
+    color:#FF2A13;
+}
+.white-space p {
+  margin-bottom:  0;
+}
+.flag.abs {
+    position: absolute;
+    left: 15px;
+    top: 44px;
+}
+.size-75-23 {
+    width: 75px;
+    height: 23px;
+}
