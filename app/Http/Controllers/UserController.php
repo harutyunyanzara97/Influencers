@@ -16,30 +16,6 @@ class UserController extends Controller
        {
            return view('clientDashboard');
        }
-    public function login()
-    {
-        return view('login');
-    }
-    public function register()
-    {
-        //todo check the type is adverticer or influencer
-        return view('asAnAdvertiser');
-    }
-    public function store(Request $request)
-    {
-        $user = new User();
-        $valid=$request->validate(['name' => 'required|min:4|string', 'email' => 'required|email|unique:users', 'password' => 'required|min:6','phone'=>'numeric' ]);
-        if ($valid->fails()) {
-            return redirect()->back()
-                ->withErrors($valid)
-                ->withInput();
-        }
-            $user->fill($request->all());
-            $user->password = Hash::make($request->password);
-            $user->save();
-            $redirect = redirect('/login');
-        return $redirect->with(['message' => __('voyager::generic.successfully_updated') . " User", 'alert-type' => 'success', ]);
-    }
     public function storeProfile(Request $request)
     {
         $user = User::where('id', Auth::user()->getId())
@@ -66,40 +42,7 @@ class UserController extends Controller
         , 'history.go(-1);'
         , '</script>';
     }
-    public function signIn(Request $r)
-    {
-        $validateLogin = Validator::make($r->all() , ['email' => 'required | email', 'password' => 'required | min:6']);
-        $user = User::where("email", $r->email)->first();
-        $validateLogin->after(function ($validateLogin) use ($user, $r) {
-            if (!$user) {
-                $validateLogin->errors()
-                    ->add('email', 'Wrong email information!');
-            }
-            elseif (!Hash::check($r->password, $user->password)) {
-                $validateLogin->errors()
-                    ->add('password', 'Wrong password!');
-            }
 
-        });
-
-        if ($validateLogin->fails()) {
-            return redirect()
-                ->back()
-                ->withErrors($validateLogin)->withInput();
-        }
-        else {
-            Session::put('user_id', $user->id);
-            auth()->login($user);
-        }
-        return view('clientDashboard', compact('user', $user));
-
-    }
-
-    public function logout(Request $r)
-    {
-        Session::forget('user_id');
-        return Redirect::to('/login');
-    }
     public function showChangePasswordForm()
     {
         return view('changePassword');
@@ -205,41 +148,6 @@ class UserController extends Controller
 //        $hashtagRecent = makeApiCall( $hashtagRecentEndpoint, 'GET', $hashtagRecentParams );
 //        $recentPost = $hashtagRecent['data'][0];
 //    }
-
-
-    //    public function passwordForget(Request $r)
-    //    {
-    //        dd($r);
-    //        $user = User::where('email', $r->email)->first();
-    //
-    //    }
-    //            public function changePassword(Request $r){
-    //            $user = User::where('id',Session::get('user_id'))->first();
-    //            if (!(Hash::check($r->input('current-password'), $user->password))) {
-    //                // The passwords matches
-    //                return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
-    //            }
-    //
-    //            if(strcmp($r->get('current-password'), $r->get('new-password')) == 0){
-    //                //Current password and new password are same
-    //                return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
-    //            }
-    //
-    //            $validatedData = $r->validate([
-    //                'current-password' => 'required',
-    //                'new-password' => 'required|string|min:6|confirmed',
-    //            ]);
-    //
-    //            $user = User::where('id',Session::get('user_id'))->first();
-    //            $user->password = bcrypt($r->get('new-password'));
-    //            $user->save();
-    //
-    //            return redirect()->back()->with("success","Password changed successfully !");
-    //
-    //        }
-    //            public function forgetPassword (){
-    //                return view('forgot');
-    //            }
 
 
 

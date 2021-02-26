@@ -58,12 +58,12 @@
         </div>
         <div class="avatar-area d-flex justify-content-center flex-column">
             <div class="avatar-img">
-                @if($user->avatar_url)
-                    <img src="{{asset('img/'.$user->avatar_url)}}">
+                @if(Auth::user()->avatar_url)
+                    <img src="{{asset('img/'.Auth::user()->avatar_url)}}">
                 @endif
                 <div class="abs"></div>
             </div>
-            <p class="fs-14-black p-13-20">{{$user->name}} <img src="" alt="" style="float: right;margin-top: 5px;"
+            <p class="fs-14-black p-13-20">{{Auth::user()->name}} <img src="" alt="" style="float: right;margin-top: 5px;"
                                                                 class="open-tab pointer"></p>
         </div>
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -90,8 +90,17 @@
             <a class="nav-link d-block contact">
                 <span class="icon-file-1">  Contact with influencer</span>
             </a>
+                <a class="nav-link d-block" style="cursor:pointer; margin-top:20px" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
 
-            <a href="{{route('logoutUser')}}" class="nav-link d-block" style="cursor:pointer; margin-top:20px">Logout
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+
+{{--            <a href="{{route('logoutUser')}}" class="nav-link d-block" style="cursor:pointer; margin-top:20px">Logout--}}
             </a>
 
         </div>
@@ -357,7 +366,7 @@
                             @csrf
                             <div class="text-center">
                                 <div class="prof-img-area m-0--auto">
-                                    <img src="{{asset('img/'.$user->avatar_url)}}" alt="" width="100%">
+                                    <img src="{{asset('img/'.Auth::user()->avatar_url)}}" alt="" width="100%">
                                     <div class="abs d-flex justify-content-center">
                                         <input id="upload" type="file" name="photo[]" onchange="readURL(this);"
                                                class="form-control">
@@ -371,20 +380,20 @@
                             <div class="form-group">
                                 <label for="nameSurname" class="fs-normal-12">Name Surname*</label>
                                 <input type="text" class="form-control h--50 fs-14-black text-left" id="name"
-                                       name="name" value="{{$user->name}}">
+                                       name="name" value="{{Auth::user()->name}}">
                                 <input type="text" class="form-control h--50 fs-14-black text-left" id="surname"
-                                       name="last_name" value="{{$user->last_name}}">
+                                       name="last_name" value="{{Auth::user()->last_name}}">
 
                             </div>
                             <div class="form-group">
                                 <label for="companyName" class="fs-normal-12">Company name*</label>
                                 <input type="text" class="form-control h--50 fs-14-black text-left" name="company_name"
-                                       id="companyName" value="{{$user->company_name}}">
+                                       id="companyName" value="{{Auth::user()->company_name}}">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="fs-normal-12">Email*</label>
                                 <input type="email" class="form-control h--50 fs-14-black text-left" name="email"
-                                       id="email" value="{{$user->email}}">
+                                       id="email" value="{{Auth::user()->email}}">
                             </div>
                             <div>
                                 <div class="roboto-16 px-5 py-3 ml-4">Select Category</div>

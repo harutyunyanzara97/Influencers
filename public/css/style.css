@@ -217,3 +217,6 @@ select {
     width: 75px;
     height: 23px;
 }
+.icon-file-1, .icon-List {
+    cursor: pointer;
+}
