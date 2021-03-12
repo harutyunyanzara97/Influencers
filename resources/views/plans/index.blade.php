@@ -38,100 +38,122 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="ModalInfluence" tabindex="-1" role="dialog" aria-labelledby="ModalInfluenceLabel"
+<div class="modal fade" id="ModalInfluence" tabindex="-1" role="dialog" aria-labelledby="ModalInfo"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content pb-5 pt-4">
             <div class="modal-header border-0">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
 
+            <div class="modal-body">
+                <div>
+                    <div id="card-errors" role="alert"></div>
+                    <div class="card">
+                        <div class="card-body">
+                            {{--                                    <form>--}}
+                            <div class="group d-flex flex-column flex-wrap">
+
+                                @auth
+                                    <form id="payment-forms" action="{{ route('subscription') }}" method="post"
+                                          class="require-validation">
+                                        @csrf
+                                        <div class="text-center p-22-32">
+                                            <h3 class="title-24">{{$plan->name}} - ${{ number_format($plan->cost, 2) }}/month</h3>
+                                            <p class="fs-18-gray">USD$ {{ number_format($plan->cost, 2) }}/per month</p>
+                                            <p class="fs-18-gray mb-5">loremipsum@gmail.com</p>
+                                            <div class="form-group relative">
+                                                <img src="{{asset('img/cart-icon.png')}}" alt="" class="abs img-icon">
+                                                <div class="card-body">
+                                                    <div id="card-element">
+                                                    </div>
+
+                                                    <div id="card-errors" role="alert"></div>
+                                                    <input type="hidden" name="plan" value="{{ $plan->id }}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='form-row row'>
+                                            <input type="number" class="form-control" id="price" name="price"
+                                                   placeholder="Please enter the price">
+                                        </div>
+                                        @if($cards)
+                                            @foreach($cards as $card)
+                                                <label class="radio-row">
+                                                    <div>
+                                                        {{--                                                    <input type="hidden" name="customer_id" value="{{$card->customer}}" >--}}
+                                                        <input type="hidden" name="card_id"
+                                                               value="{{$card->card_id}}">
+                                                        <input type="radio" name="payment-source"
+                                                               class="group-radio"
+                                                               value="saved-card-1">
+                                                    </div>
+
+                                                    <div id="saved-card">**** ****
+                                                        **** {{substr($card->card_number, -4)}}</div>
+                                                </label>
+                                            @endforeach
+                                        @endif
+                                        <div class="outcome">
+                                            <div class="error"></div>
+                                            <div class="success-saved-card">
+                                                Success! Your are using saved card <span
+                                                    class="saved-card"></span>
+                                            </div>
+                                            <div class="success-new-card">
+                                                Success! The Stripe token for your new card is <span
+                                                    class="token"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <button class="btn-red w-100 br-5 h--45 mt-3" type="submit">Subscribe</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                @endauth
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    $('.cardButton').on('click', function (event) {
-        event.preventDefault();
-        $.ajax({
-            url: $(this).data('path'),
-            method: "get",
-            data: {_token: $('meta[name="csrf-token"]').attr('content')},
-            success: (response) => {
-                console.log(response);
-                $('#ModalInfluence div.modal-body').html(response);
-            }
-        })
-    });
-</script>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-    // Create a Stripe client.
-    var stripe = Stripe('pk_test_51IDT1rLV6S2YaGRAadUEI9mxO2j2wbfh5Jc69TSDKj7Cdo1sxfpn1XNyPJdmIPS0axoc3VyAWiC3y5QkSDlIuLnF00sP8sZ7Ge');
-    // Create an instance of Elements.
-    var elements = stripe.elements();
-    // Custom styling can be passed to options when creating an Element.
-    // (Note that this demo uses a wider set of styles than the guide below.)
-    var style = {
-        base: {
-            color: '#32325d',
-            lineHeight: '18px',
-            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-            fontSmoothing: 'antialiased',
-            fontSize: '16px',
-            '::placeholder': {
-                color: '#aab7c4'
-            }
-        },
-        invalid: {
-            color: '#fa755a',
-            iconColor: '#fa755a'
-        }
-    };
-    var card = elements.create('card', {style: style});
-    // Add an instance of the card Element into the `card-element` <div>.
-    card.mount('#card-element');
-    // Handle real-time validation errors from the card Element.
-    card.addEventListener('change', function (event) {
-        var displayError = document.getElementById('card-errors');
-        if (event.error) {
-            displayError.textContent = event.error.message;
-        } else {
-            displayError.textContent = '';
-        }
-    });
-    // Handle form submission.
-    var form = document.getElementById('payment-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        stripe.createToken(card).then(function (result) {
-            if (result.error) {
-                // Inform the user if there was an error.
-                var errorElement = document.getElementById('card-errors');
-                errorElement.textContent = result.error.message;
-            } else {
-                // Send the token to your server.
-                stripeTokenHandler(result.token);
-            }
-        });
-    });
+{{--<div class="modal fade payment-modal" id="ModalInfluence" tabindex="-1" role="dialog" aria-labelledby="ModalInfluenceLabel"--}}
+{{--     aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content pb-5 pt-4">--}}
+{{--            <div class="modal-header border-0">--}}
+{{--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <span aria-hidden="true"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
 
-    // Submit the form with the token ID.
-    function stripeTokenHandler(token) {
-        // Insert the token ID into the form so it gets submitted to the server
-        var form = document.getElementById('payment-form');
-        var hiddenInput = document.createElement('input');
-        hiddenInput.setAttribute('type', 'hidden');
-        hiddenInput.setAttribute('name', 'token');
-        hiddenInput.setAttribute('value', 'token');
-        form.appendChild(hiddenInput);
-        // Submit the form
-        form.submit();
-    }
-</script>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--<script>--}}
+{{--    $('.cardButton').on('click', function (event) {--}}
+{{--        event.preventDefault();--}}
+{{--        $.ajax({--}}
+{{--            url: $(this).data('path'),--}}
+{{--            method: "get",--}}
+{{--            data: {_token: $('meta[name="csrf-token"]').attr('content')},--}}
+{{--            success: (response) => {--}}
+{{--                console.log(response);--}}
+{{--                $('#ModalInfluence div.modal-body').html(response);--}}
+{{--            }--}}
+{{--        })--}}
+{{--    });--}}
+{{--</script>--}}
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{{asset('js/profil.js')}}"></script>
+
 
 
 

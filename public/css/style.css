@@ -220,3 +220,202 @@ select {
 .icon-file-1, .icon-List {
     cursor: pointer;
 }
+.card-i {
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 5px auto;
+    width: 90.6mm;
+    height: 20.98mm;
+    color: #fff;
+    font: 8px/1 "Iceland", monospace;
+    background: #929294;
+    border: 1px solid #929294;
+    -webkit-border-radius: 10px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 10px;
+    -moz-background-clip: padding;
+    border-radius: 10px;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+.pan {
+    font-size: 12px;
+}
+.bank-name {
+    float: right;
+    margin-top: 15px;
+    margin-right: 30px;
+    font: 800 10px "Open Sans", Arial, sans-serif;
+}
+
+.data {
+    position: relative;
+    z-index: 100;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+.data .pan,
+.data .month,
+.data .year,
+.data .year:before,
+.data .name-on-card,
+.data .date {
+    position: relative;
+    z-index: 20;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px #000;
+}
+.data .pan:before,
+.data .month:before,
+.data .year:before,
+.data .year:before:before,
+.data .name-on-card:before,
+.data .date:before,
+.data .pan:after,
+.data .month:after,
+.data .year:after,
+.data .year:before:after,
+.data .name-on-card:after,
+.data .date:after {
+    position: absolute;
+    z-index: -10;
+    content: attr(title);
+    color: rgba(0, 0, 0, 0.2);
+    text-shadow: none;
+}
+.data .pan:before,
+.data .month:before,
+.data .year:before,
+.data .year:before:before,
+.data .name-on-card:before,
+.data .date:before {
+    top: -1px;
+    left: -1px;
+    color: rgba(0, 0, 0, 0.1);
+}
+.data .pan:after,
+.data .month:after,
+.data .year:after,
+.data .year:before:after,
+.data .name-on-card:after,
+.data .date:after {
+    top: 1px;
+    left: 1px;
+    z-index: 10;
+}
+.data .pan {
+    position: relative;
+    z-index: 50;
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.data .first-digits {
+    margin: 0;
+    font: 400 10px/1 "Open Sans", Arial, sans-serif;
+}
+.data .exp-date-wrapper {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    *zoom: 1;
+}
+.data .exp-date-wrapper:before,
+.data .exp-date-wrapper:after {
+    content: " ";
+    display: table;
+}
+.data .exp-date-wrapper:after {
+    clear: both;
+}
+.data .exp-date-wrapper .left-label {
+    float: left;
+    display: inline-block;
+    width: 40px;
+    font: 400 10px/8px "Open Sans", Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+.data .exp-date-wrapper .exp-date {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+}
+.data .exp-date-wrapper .exp-date .upper-labels {
+    font: 400 10px/1 "Open Sans", Arial, sans-serif;
+}
+.data .exp-date-wrapper .exp-date .year:before {
+    content: "/";
+}
+.data .name-on-card {
+    margin-top: 10px;
+}
+.data .date {
+    font-size:20px
+}
+#stripeModal {
+    margin: auto;
+}
+#stripeModal  .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+#stripeModal  .card input {
+    margin: 0 !important;
+    width: 85%;
+}
+
+#stripeModal  .modal-dialog {
+    /* height: auto; */
+    margin: auto;
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    max-width: 500px;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    border-radius: 10px;
+}
+#stripeModal  .modal-dialog h2 {
+    font-size: 24px;
+}
+
+#stripeModal  .modal-body {
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+    padding: 15px 0;
+}
+
+#stripeModal  .modal-header {
+    padding: 0;
+}
+
+#stripeModal  .card-body {
+    padding: 15px 0;
+}
+
+.payment-submit {
+    background: rgb(78, 102, 54);
+    border: none;
+    cursor: pointer;
+}
+
+#stripeModal  .modal-header .close {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+}
+#stripeModal  .input-group {
+    border:1px solid #d6d6d6;
+}
+#payment-form {
+    height: 100px;
+}

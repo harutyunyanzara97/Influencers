@@ -1,9 +1,8 @@
-
-@include('layout.header')
+@extends('layouts.app')
 
 
 <main class="">
-    <div class="d-flex align-items-center flex-wrap">
+    <div class="d-flex align-items-center">
         <div class="relative">
             <img src="img/photo.png"  alt="" class="img-fluid">
             <div class="rightSide-content d-flex flex-column">
@@ -78,7 +77,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password-confirm" class="fs-14-gray">{{ __('Confirm Password') }}</label>
-                        <input id="password-confirm" type="password" class="form-control pr-input" name="password_confirmation" required autocomplete="new-password">
+                    <input id="password-confirm" type="password" class="form-control pr-input" name="password_confirmation" required autocomplete="new-password">
                     @error('password_confirmation')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

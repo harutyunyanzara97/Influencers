@@ -140,25 +140,119 @@ $(document).ready(function(){
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-    /*$("#influencers").on("click", function () {
-        $(".analytics_ul a:first-child").css({
-            "background": "#F5F7FB",
-            "border" : "none"
+    $('.campaignsAndLists').on('click', function (event) {
+        event.preventDefault();
+        $(".campaignsAndLists").removeClass("active");
+        $(this).addClass("active");
+        $.ajax({
+            url: '/index',
+            method: "get",
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
+            success: (response) => {
+                console.log(response);
+                $("#main").html(response);
+            }
         })
-        $("#influencers").toggleClass("influencers")
-      $(".analytics_block_ul,.grafic_container,.audience_geography_age_ethnicity_container").toggleClass("fade");
-    })*/
+    });
+    $('.payment').on('click', function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/plans',
+            method: "get",
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
+            success: (response) => {
+                console.log(response);
+                $("#main").html(response);
+            }
+        })
+    });
+    $('.billing').on('click', function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: 'billing',
+            method: "get",
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
+            success: (response) => {
+                console.log(response);
+                $("#main").html(response);
+            }
+        })
+    });
+    $('.searchInfluencer').on('click', function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/search-influencer',
+            method: "get",
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
+            success: (response) => {
+                console.log(response);
+                $("#main").html(response);
+            }
+        })
+    });
+    $('.contact').on('click', function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/contact',
+            method: "get",
+            data: {_token: $('meta[name="csrf-token"]').attr('content')},
+            success: (response) => {
+                console.log(response);
+                $("#main").html(response);
+            }
+        })
+    });
+    $('.myLists').on('click', function (event) {
+        $("#main").html(`<div id="Lists" class="tab-pane fade active show">
+                     <button class="color-red fs-12 border-0 ml-2 bg-transparent create_new_list">
+                               <img src="{{asset('img/plus-icon.png')}}" alt="" width="14" height="14" class="mr-1">
+                      Create New List</button>
+                            <div class="d-flex ">
+                                <div class="card">
+                                    <div class="roboto-18-gray mb-3">Favorites List</div>
+                                    <img src="{{asset('img/insta-logo.png')}}" alt="" width="18" height="18">
+                                    <div class="roboto-16 my-2">Favorites List</div>
+                                    <div class="roboto-12 mb-1">1 Influencer</div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="gray-bordered-btn list-see-more">See More <img src="{{asset('img/see-more-icon.png')}}" alt="" width="13" height="13" class="ml-1"></button>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="roboto-18-gray mb-3">Favorites List</div>
+                                    <img src="{{asset('img/insta-logo.png')}}" alt="" width="18" height="18">
+                                    <div class="roboto-16 my-2">Nina Mendes</div>
+                                    <div class="roboto-12 mb-2">1 Influencer</div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="gray-bordered-btn list-see-more">See More <img src="{{asset('img/see-more-icon.png')}}" alt="" width="13" height="13" class="ml-1"></button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+`);
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*$("#influencers").on("click", function () {
+    $(".analytics_ul a:first-child").css({
+        "background": "#F5F7FB",
+        "border" : "none"
+    })
+    $("#influencers").toggleClass("influencers")
+  $(".analytics_block_ul,.grafic_container,.audience_geography_age_ethnicity_container").toggleClass("fade");
+})*/
 
     $("#ststis_a").on("click", function(){
         $(".btn-list-compaings").toggleClass("active");

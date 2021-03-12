@@ -64,9 +64,18 @@ class UserController extends Controller
     }
     public function instagram(){
     $inst=new Instagram('2883480005030754','89f7a8b00e4622c8d00d7db316b05781','http://localhost:8000/callbackInstagram','basic','');
-    dd($inst);
     }
+    public function influencer()
+    {
+        //todo check the type is adverticer or influencer
+        return view('influenceDashboard');
+    }
+    public function search(){
+           return view('search-influencer');
+    }
+public function search_hashtags() {
 
+}
 //    public function makeApiCall( $endpoint, $type, $params ) {
 //		$ch = curl_init();
 //

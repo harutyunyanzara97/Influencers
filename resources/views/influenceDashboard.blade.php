@@ -13,20 +13,20 @@
     <link rel="stylesheet" href="css/styleDashboards.css">
     <title>Influence Dashboard</title>
 </head>
-<body>
+<body class="body-bg">
 <div class="d-flex" style="max-width: 1600px; margin: 0 auto; position: relative">
     <div class="left-sidebar-fix">
         <div class="p-11-25">
             <a href="#">
-                <img src="img/logo1.png" width="34" height="34" alt="">
+                <img src="{{asset('img/logo1.png" width="34" height="34')}}" alt="">
             </a>
         </div>
         <div class="avatar-area d-flex justify-content-center flex-column">
             <div class="avatar-img p-13-20">
-                <img src="img/avatar-img.png" alt="">
+                <img src="{{asset('img/profile-img.png')}}" alt="">
                 <div class="abs"></div>
             </div>
-            <p class="fs-14-black p-13-20">Alice Jonson <img src="img/arrow-down-small.png" alt="" style="float: right;margin-top: 5px;" class="open-tab pointer"></p>
+            <p class="fs-14-black p-13-20">Alice Jonson <img src="{{asset('img/arrow-down-small.png')}}" alt="" style="float: right;margin-top: 5px;" class="open-tab pointer"></p>
         </div>
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
@@ -40,7 +40,8 @@
             <a class="nav-link d-block" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><span class="icon-file-1"></span>Campaign Report</a>
         </div>
     </div>
-    <div class="main-content">
+    {{-- Dashboard Fashian    --}}
+    <div class="main-content" style="display:none">
         <div class="content-header p-10-35">
             <div class="d-flex justify-content-between">
                 <div class="d-none fs-18-gray" id="accountProfile">Account profile/Alice Jonson</div>
@@ -48,20 +49,20 @@
                 <div class="d-none fs-18-gray" id="planSubscribe">Payment Method</div>
 
                 <div class="input-group m-0 header-input-section" style="width: 75%!important;">
-                    <span class="abs"><img src="img/search-icon.png" width="16" height="17" alt=""></span>
+                    <span class="abs"><img src="{{asset('img/search-icon.png" width="16" height="17')}}" alt=""></span>
                     <input type="text" class="form-control m-0" placeholder="Search the directory" aria-label="Search the directory" aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="" type="button" id="button-addon2"><img src="img/search-settings.png" alt=""></button>
+                        <button class="" type="button" id="button-addon2"><img src="{{asset('img/search-settings.png')}}" alt=""></button>
                     </div>
 
-                    <div id="menu"> <button class="btn-header bg-red ml-4"><img src="img/filter.png" alt="" class="mr-2">Filter</button></div>
-                    <div id="menu-view" class="d-none"> <button class="btn-header bg-transparent ml-4"><img src="img/view.png" alt="" class="mr-2">View</button></div>
+                    <div id="menu"> <button class="btn-header bg-red ml-4"><img src="{{asset('img/filter.png')}}" alt="" class="mr-2">Filter</button></div>
+                    <div id="menu-view" class="d-none"> <button class="btn-header bg-transparent ml-4"><img src="{{asset('img/view.png')}}" alt="" class="mr-2">View</button></div>
                 </div>
-                <button class="btn-header bg-purple ml-4" data-toggle="modal" data-target="#ImportModalCenter"><img src="img/import.png" alt="" class="mr-2">Import</button>
+                <button class="btn-header bg-purple ml-4" data-toggle="modal" data-target="#ImportModalCenter"><img src="{{asset('img/import.png')}}" alt="" class="mr-2">Import</button>
                 <div id="lgMenu" class="px--20">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2 class="fs-24-bold-black mb-0 fw-normal">Filter</h2>
-                        <span id="exit"><img src="img/cross-icon.png" alt=""></span>
+                        <span id="exit"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
                     </div>
                     <div class="w-100">
                         <button class="btn-clear-filter">Clear Filter</button>
@@ -100,31 +101,31 @@
                         <ul class="list-unstyled">
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Follower range</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Networks</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Audience filters</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Post frequency</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Follower range</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Date range</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span class="fs-12-light-gray">Gender</span>
-                                <span><img src="img/padlock.png" alt=""></span>
+                                <span><img src="{{asset('img/padlock.png')}}" alt=""></span>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +134,7 @@
                 <div id="lgMenu-view" class="px--20">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2 class="fs-24-bold-black mb-0 fw-normal">View</h2>
-                        <span id="exit-view"><img src="img/cross-icon.png" alt=""></span>
+                        <span id="exit-view"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
                     </div>
                     <div>
                         <p class="fs-18-gray text-left">Turn columns on or off to <br> customize the current view. </p>
@@ -182,30 +183,30 @@
                     <div class="profileMenu--block--content">
                         <div class="d-flex  align-items-center mb-2">
                             <div class="mr-2 d-flex align-items-center flex-1">
-                                <img src="img/back-icon.png" alt="" class="mr-2 back-icon">
+                                <img src="{{asset('img/back-icon.png')}}" alt="" class="mr-2 back-icon">
                                 <h2 class="fs-12 fw-300 font-italic mb-0">View Kylie ✨ profile</h2>
                             </div>
-                            <span id="exit-profile1" class="d-flex"><img src="img/cross-icon.png" alt=""></span>
+                            <span id="exit-profile1" class="d-flex"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
                         </div>
                         <hr>
                         <div class="profileMenu--block--content-img">
-                            <img src="img/profBlock-content-img.png" alt="" class="mb-2">
+                            <img src="{{asset('img/profBlock-content-img.png')}}" alt="" class="mb-2">
                             <p class="fs-14-gray fw-normal">Throwback🤰🏻pregnant with my baby girl. I can’t believe my daughter will be two soon..🖤 #stormi</p>
                         </div>
                         <div class="d-flex flex-column mb-3">
                             <div class="d-flex mb-3">
                                 <div class="fs-14 fw-300">Status</div>
                                 <div class="d-flex align-items-end ml-3">
-                                    <img src="img/dots.png" alt="" class="mb-2">
+                                    <img src="{{asset('img/dots.png')}}" alt="" class="mb-2">
                                 </div>
                             </div>
                             <div class="d-flex">
                                 <div class="d-flex mr-4">
-                                    <img src="img/heart-icon.png" alt="" class="mr-2">
+                                    <img src="{{asset('img/heart-icon.png')}}" alt="" class="mr-2">
                                     <p class="m-0 fs-14-black">9.5 million likes</p>
                                 </div>
                                 <div class="d-flex">
-                                    <img src="img/chat-icon.png" alt="" class="mr-2">
+                                    <img src="{{asset('img/chat-icon.png')}}" alt="" class="mr-2">
                                     <p class="m-0 fs-14-black">41,758 comments</p>
                                 </div>
                             </div>
@@ -214,13 +215,13 @@
                             <div class="d-flex mb-3">
                                 <div class="fs-14 fw-300">Author</div>
                                 <div class="d-flex align-items-end ml-3">
-                                    <img src="img/dots.png" alt="" class="mb-2">
+                                    <img src="{{asset('img/dots.png')}}" alt="" class="mb-2">
                                 </div>
                             </div>
                             <div class="d-flex">
                                 <div class="d-flex">
                                     <div>
-                                        <img src="img/insta-icon-big.png" alt="" class="mr-2">
+                                        <img src="{{asset('img/insta-icon-big.png')}}" alt="" class="mr-2">
                                     </div>
                                     <div>
                                         <p class="m-0 fs-14">156.8 million social reach</p>
@@ -234,7 +235,7 @@
                         <div class="d-flex  align-items-start mb-5">
                             <div class="d-flex align-items-center flex-1">
                                 <div class="profileMenu--avatar-img mr-2">
-                                    <img src="img/prof-avatar.png" alt="">
+                                    <img src="{{asset('img/prof-avatar.png')}}" alt="">
                                 </div>
                                 <div>
                                     <h2 class="fs-24-bold-black fw-normal mb-2">Kylie Jenner✨</h2>
@@ -244,30 +245,30 @@
                                     </div>
                                 </div>
                             </div>
-                            <span id="exit-profile" class="d-flex"><img src="img/cross-icon.png" alt=""></span>
+                            <span id="exit-profile" class="d-flex"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
                         </div>
                         <ul class="list-unstyled d-flex justify-content-end mb-4 flex-1 align-items-center">
-                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                            <li><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                         </ul>
                         <hr>
                         <h4 class="fs-24-bold-black text-left pt-3">156.8 million social reach</h4>
                         <div class="d-flex align-items-start mb-3">
-                            <img src="img/insta-icon-big.png" alt="" class="mt-1">
+                            <img src="{{asset('img/insta-icon-big.png')}}" alt="" class="mt-1">
                             <span class="ml-2 fs-14 pr-5">156.8 million Instagram followers @kyliejenner</span>
                         </div>
                         <hr>
                         <h4 class="fs-24-bold-black text-left">Engagement</h4>
                         <div class="engagement-col mb-3">
-                            <img src="img/insta-icon-small.png" alt="">
+                            <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                             <span class="ml-2">High engagement on Instagram</span>
                         </div>
                         <hr>
                         <h4 class="fs-24-bold-black text-left">Estimated cost per post</h4>
                         <div class="cost-col">
-                            <img src="img/insta-icon-small.png" alt="">
+                            <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                             <span class="ml-2">$7k - $15k on Instagram</span>
                         </div>
                         <hr>
@@ -280,37 +281,37 @@
                         <hr>
                         <div class="d-flex justify-content-between flex-wrap" style="max-height: 350px; overflow-y: scroll; overflow-x: hidden">
                             <div class="profileMenu--block">
-                                <img src="img/Prof-img1.png" alt="">
+                                <img src="{{asset('img/Prof-img1.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white">Throwback🤰🏻pregnant with my baby girl. I can’t believe my daughter will be two soon.. 🖤 #stormi</p>
                                 </div>
                             </div>
                             <div class="profileMenu--block">
-                                <img src="img/prof-img2.png" alt="">
+                                <img src="{{asset('img/prof-img2.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white">Throwback🤰🏻pregnant Animi cupiditate deserunt ipsum magnam obcaecati, porro repudiandae saepe? Accusantium distinctio eaque expedita iste nam quia saepe velit. Labore. 🖤 #stormi</p>
                                 </div>
                             </div>
                             <div class="profileMenu--block">
-                                <img src="img/prof-img2.png" alt="">
+                                <img src="{{asset('img/prof-img2.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white"> Animi cupiditate deserunt ipsum magnam obcaecati, porro repudiandae saepe? Accusantium distinctio eaque expedita iste nam quia saepe velit. Labore</p>
                                 </div>
                             </div>
                             <div class="profileMenu--block">
-                                <img src="img/maui-weddings-home1%201.png" alt="">
+                                <img src="{{asset('img/maui-weddings-home1%201.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestias, nemo..</p>
                                 </div>
                             </div>
                             <div class="profileMenu--block">
-                                <img src="img/maui-weddings-home1%201.png" alt="">
+                                <img src="{{asset('img/maui-weddings-home1%201.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestias, nemo..</p>
                                 </div>
                             </div>
                             <div class="profileMenu--block">
-                                <img src="img/prof-img2.png" alt="">
+                                <img src="{{asset('img/prof-img2.png')}}" alt="">
                                 <div class="abs">
                                     <p class="m-0 fs-14 text-white"> Animi cupiditate deserunt ipsum magnam obcaecati, porro repudiandae saepe? Accusantium distinctio eaque expedita iste nam quia saepe velit. Labore</p>
                                 </div>
@@ -327,11 +328,11 @@
                     <div class="bg-light-blue py-4">
                         <div class="text-center">
                             <div class="prof-img-area m-0--auto">
-                                <img src="img/avatar-img.png" alt="" class="w-100">
+                                <img src="{{asset('img/avatar-img.png')}}" alt="" class="w-100">
                             </div>
                             <div>
-                                <button class="btn-white"><img src="img/upload-image-icon%20(1).png" alt="" class="m-r--10">Upload image</button>
-                                <button class="btn-white"><img src="img/edit-image-icon.png" alt="" class="m-r--10">Edit Info</button>
+                                <button class="btn-white"><img src="{{asset('img/upload-image-icon%20(1).png')}}" alt="" class="m-r--10">Upload image</button>
+                                <button class="btn-white"><img src="{{asset('img/edit-image-icon.png')}}" alt="" class="m-r--10">Edit Info</button>
                             </div>
                         </div>
                         <form action="#">
@@ -445,11 +446,11 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 <p class="mx-2 my-2">
                                     <input type="radio" id="test5" name="radio-group" checked>
-                                    <label for="test5"><img src="img/paypal.png" alt=""></label>
+                                    <label for="test5"><img src="{{asset('img/paypal.png')}}" alt=""></label>
                                 </p>
                                 <p class="mx-2 my-2">
                                     <input type="radio" id="test6" name="radio-group">
-                                    <label for="test6"><img src="img/amex.png" alt=""></label>
+                                    <label for="test6"><img src="{{asset('img/amex.png')}}" alt=""></label>
                                 </p>
                             </div>
                             <div class="form-row">
@@ -512,7 +513,7 @@
                         </form>
                     </div>
                     <div class="d-flex justify-content-center w-40">
-                        <img src="img/paymentPlan-img.png" alt="">
+                        <img src="{{asset('img/paymentPlan-img.png')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -566,7 +567,7 @@
                                         <div class="input-group my-3 px-2 py-2 bg-white border-input">
                                             <input id="upload" type="file" onchange="readURL(this);" class="form-control">
                                             <label id="upload-label" for="upload" class="h--50 fs-14-black text-left text-muted">
-                                                <img src="img/photo-icon.png" alt="" class="mr-2">
+                                                <img src="{{asset('img/photo-icon.png')}}" alt="" class="mr-2">
                                                 Upload Images (Not Mandatory)
                                             </label>
                                         </div>
@@ -584,88 +585,88 @@
                     <div class="d-flex flex-wrap" style="max-width: calc(100% - 350px); width: 100%">
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/Fashion.png" alt="">
+                            <img src="{{asset('img/Fashion.png')}}" alt="">
                             <h3 class="influecer-title">Fashion</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/Makeup-for-stunning-and-Adorable-Look-1%201.png" alt="">
+                            <img src="{{asset('img/Makeup-for-stunning-and-Adorable-Look-1%201.png')}}" alt="">
                             <h3 class="influecer-title">Beauty</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/travel-blog%201.png" alt="">
+                            <img src="{{asset('img/travel-blog%201.png')}}" alt="">
                             <h3 class="influecer-title">Travel</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/turtle-caught%201.png" alt="">
+                            <img src="{{asset('img/turtle-caught%201.png')}}" alt="">
                             <h3 class="influecer-title">Animals</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/cardio-workout%201.png" alt="">
+                            <img src="{{asset('img/cardio-workout%201.png')}}" alt="">
                             <h3 class="influecer-title">Health & fitness</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/Local+188+Seafood+Paella+resized%201.png" alt="">
+                            <img src="{{asset('img/Local+188+Seafood+Paella+resized%201.png')}}" alt="">
                             <h3 class="influecer-title">Food & drink</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/maui-weddings-home1%201.png" alt="">
+                            <img src="{{asset('img/maui-weddings-home1%201.png')}}" alt="">
                             <h3 class="influecer-title">Wedding</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/InteriorDesign_10_WashingtonDC_-Katherine-Robert%201.png" alt="">
+                            <img src="{{asset('img/InteriorDesign_10_WashingtonDC_-Katherine-Robert%201.png')}}" alt="">
                             <h3 class="influecer-title">Home interior</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/inf9.png" alt="">
+                            <img src="{{asset('img/inf9.png')}}" alt="">
                             <h3 class="influecer-title">Business & finance</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/inf10.png" alt="">
+                            <img src="{{asset('img/inf10.png')}}" alt="">
                             <h3 class="influecer-title">Baking</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/inf11.png" alt="">
+                            <img src="{{asset('img/inf11.png')}}" alt="">
                             <h3 class="influecer-title">Sport</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/inf12.png" alt="">
+                            <img src="{{asset('img/inf12.png')}}" alt="">
                             <h3 class="influecer-title">Technology</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/Fashion.png" alt="">
+                            <img src="{{asset('img/Fashion.png')}}" alt="">
                             <h3 class="influecer-title">Fashion</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/Makeup-for-stunning-and-Adorable-Look-1%201.png" alt="">
+                            <img src="{{asset('img/Makeup-for-stunning-and-Adorable-Look-1%201.png')}}" alt="">
                             <h3 class="influecer-title">Beauty</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/travel-blog%201.png" alt="">
+                            <img src="{{asset('img/travel-blog%201.png')}}" alt="">
                             <h3 class="influecer-title">Travel</h3>
                         </div>
                         <div class="mr-3 mb-3 influecer-area">
                             <div class="abs"></div>
-                            <img src="img/turtle-caught%201.png" alt="">
+                            <img src="{{asset('img/turtle-caught%201.png')}}" alt="">
                             <h3 class="influecer-title">Animals</h3>
                         </div>
                     </div>
                 </div>
                 <div class="pt-2 table-div d-none">
-                    <p class="px-3 my-3"><img src="img/search-icon-dark.png" alt=""> 92,310 found</p>
+                    <p class="px-3 my-3"><img src="{{asset('img/search-icon-dark.png')}}" alt=""> 92,310 found</p>
                     <table class="table bg-white client-table">
                         <thead>
                         <tr>
@@ -683,31 +684,31 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100 " >
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -736,33 +737,33 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
-                                    <span class="mx-2"><img src="img/twitter-table-icon.png" alt=""></span>
-                                    <span class="mx-2"><img src="img/youtube-table-icon.png" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/twitter-table-icon.png')}}" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/youtube-table-icon.png')}}" alt=""></span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -791,45 +792,45 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
                                         <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center">
-                                            <img src="img/message-icon.png" alt=""></a>
+                                                <img src="{{asset('img/message-icon.png')}}" alt=""></a>
                                         </li>
                                         <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center">
-                                            <img src="img/mark-icon.png" alt=""></a>
+                                                <img src="{{asset('img/mark-icon.png')}}" alt=""></a>
                                         </li>
                                         <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center">
-                                            <img src="img/edit-icon.png" alt=""></a>
+                                                <img src="{{asset('img/edit-icon.png')}}" alt=""></a>
                                         </li>
                                         <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center">
-                                            <img src="img/continue-icon.png" alt=""></a>
+                                                <img src="{{asset('img/continue-icon.png')}}" alt=""></a>
                                         </li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
                                     <span class="mx-2">
-                                        <img src="img/twitter-table-icon.png" alt="">
+                                        <img src="{{asset('img/twitter-table-icon.png')}}" alt="">
                                     </span>
                                     <span class="mx-2">
-                                        <img src="img/youtube-table-icon.png" alt="">
+                                        <img src="{{asset('img/youtube-table-icon.png')}}" alt="">
                                     </span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -858,33 +859,33 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""/></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""/></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
-                                    <span class="mx-2"><img src="img/twitter-table-icon.png" alt=""></span>
-                                    <span class="mx-2"><img src="img/youtube-table-icon.png" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/twitter-table-icon.png')}}" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/youtube-table-icon.png')}}" alt=""></span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -913,37 +914,37 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
                                     <span class="mx-2">
-                                        <img src="img/twitter-table-icon.png" alt="">
+                                        <img src="{{asset('img/twitter-table-icon.png')}}" alt="">
                                     </span>
                                     <span class="mx-2">
-                                        <img src="img/youtube-table-icon.png" alt="">
+                                        <img src="{{asset('img/youtube-table-icon.png')}}" alt="">
                                     </span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -972,33 +973,33 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
-                                    <span class="mx-2"><img src="img/twitter-table-icon.png" alt=""></span>
-                                    <span class="mx-2"><img src="img/youtube-table-icon.png" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/twitter-table-icon.png')}}" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/youtube-table-icon.png')}}" alt=""></span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -1027,31 +1028,31 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -1080,33 +1081,33 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
-                                    <span class="mx-2"><img src="img/twitter-table-icon.png" alt=""></span>
-                                    <span class="mx-2"><img src="img/youtube-table-icon.png" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/twitter-table-icon.png')}}" alt=""></span>
+                                    <span class="mx-2"><img src="{{asset('img/youtube-table-icon.png')}}" alt=""></span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -1135,31 +1136,31 @@
                             <td scope="row" class="border-left border-right pt-0 pb-0 pointer openProfileMenu">
                                 <div class="d-flex justify-content-around align-items-center h-100">
                                     <span class="mr-3 fs-18-gray">+</span>
-                                    <span class="avatar-img-icon"><img src="img/avatar-image-icon.png" alt=""></span>
+                                    <span class="avatar-img-icon"><img src="{{asset('img/avatar-image-icon.png')}}" alt=""></span>
                                     <span class="ml-3 color-black mr-5">Kayle Jenner</span>
                                     <ul class="list-unstyled d-flex justify-content-around m-0 flex-1 h-100 align-items-center">
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/message-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/mark-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/edit-icon.png" alt=""></a></li>
-                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="img/continue-icon.png" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/message-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/mark-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/edit-icon.png')}}" alt=""></a></li>
+                                        <li class="h-100"><a href="#" class="px-3 h-100 d-flex align-items-center"><img src="{{asset('img/continue-icon.png')}}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="img/insta-icon-big.png" alt="">
+                                    <img src="{{asset('img/insta-icon-big.png')}}" alt="">
                                     <span class="ml-2">154 million</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="engagement-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">Good</span>
                                 </div>
                             </td>
                             <td>
                                 <div class="cost-col">
-                                    <img src="img/insta-icon-small.png" alt="">
+                                    <img src="{{asset('img/insta-icon-small.png')}}" alt="">
                                     <span class="ml-2">$100 - $300</span>
                                 </div>
                             </td>
@@ -1211,7 +1212,7 @@
                                             <option value="1">3</option>
                                             <option value="1">4</option>
                                         </select>
-                                        <i class="angle-down top-42"><img src="img/arrow-down-small.png" alt=""></i>
+                                        <i class="angle-down top-42"><img src="{{asset('img/arrow-down-small.png')}}" alt=""></i>
                                     </div>
                                     <div class="form-group">
                                         <label for="reportText" class="fs-normal-12">Report Text</label>
@@ -1229,13 +1230,247 @@
             </div>
         </div>
     </div>
+    {{-- Dashboard Invites --}}
+    <div class="main-content" style="display:none">
+        <div class="content-header p-10-35">
+            <div class="d-flex justify-content-end">
+                <div id="calendar">
+                    <button><img src="{{asset('img/iconfinder_calendar.png')}}" alt="" ></button>
+                </div>
+                <div class="input-group m-0 header-input-section" style="width: 39%!important;">
+                    <input type="text" class="form-control m-0" placeholder="Search & find your category" aria-label="Search & find your category" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="" type="button" id="button-addon2"><img src="{{asset('img/search-settings.png')}}" alt=""></button>
+                    </div>
+                    <div id="menu-view" class="d-none"> <button class="btn-header bg-transparent ml-4"><img src="{{asset('img/view.png')}}" alt="" class="mr-2">View</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top"></div>
+        <div class="content-page">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Advertiser</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Product description</th>
+                    <th scope="col">Post details</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+
+                </tr>
+                </thead>
+                <tbody class="tbody">
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="./img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+                    <td class="dashboard-price">135$</td>
+                    <td class="dashboard-check"><img class="check-mark" src="{{asset('img/check-mark.png')}}" alt=""> <img class="check-close" src="{{asset('img/chechk-close.png')}}" alt=""></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{-- Dashboard Campaigns --}}
+    <div class="main-content">
+        <div class="content-header p-10-35">
+            <div class="d-flex justify-content-end">
+                {{--                <div class="search">--}}
+                <div id="calendar">
+                    <button><img src="{{asset('img/iconfinder_calendar.png')}}" alt="" ></button>
+                </div>
+                <div class="input-group m-0 header-input-section" style="">
+                    <input type="text" class="form-control m-0" placeholder="Search & find your category" aria-label="Search & find your category" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="" type="button" id="button-addon2"><img src="{{asset('img/search-settings.png')}}" alt=""></button>
+                    </div>
+                    <div id="menu-view" class="d-none"> <button class="btn-header bg-transparent ml-4"><img src="{{asset('img/view.png')}}" alt="" class="mr-2">View</button></div>
+                </div>
+                {{--                </div>--}}
+
+            </div>
+        </div>
+        <div class="border-top"></div>
+        <div class="content-page">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Advertiser</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Product description</th>
+                    <th scope="col">Post details</th>
+                    <th scope="col">Number</th>
+                    <th scope="col"></th>
+
+                </tr>
+                </thead>
+                <tbody class="tbody">
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt=""><span>Alice Jonson</span></th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-online"></div>Started</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-break"></div>In Process</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-online"></div>Started</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-break"></div>In Process</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-online"></div>Started</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-break"></div>In Process</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-online"></div>Started</td>
+                </tr>
+
+                <tr>
+                    <th scope="row"><img src="{{asset('img/profile-img.png')}}" alt="">Alice Jonson</th>
+                    <td class="product-name">Ferrero Rocher</td>
+                    <td class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</td>
+                    <td class="post-details"><p class="data-details">07.02.2021</p><p class="time-details">13:00</p></td>
+                    <td class="dashboard-number">1</td>
+
+                    <td class="dashboard-point"><div class="point p-break"></div>In Process</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div class="modal fade" id="ImportModalCenter" tabindex="-1" role="dialog" aria-labelledby="ImportModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content p-32-64">
                 <div class="modal-header border-bottom-0 mb-3">
-                    <h5 class="modal-title title-48 " id="exampleModalLongTitle"><img src="img/import-icon.png" alt=""> Import</h5>
+                    <h5 class="modal-title title-48 " id="exampleModalLongTitle"><img src="{{asset('img/import-icon.png')}}" alt=""> Import</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="abs"><img src="img/cross-icon.png" width="24" height="24" alt=""></span>
+                        <span aria-hidden="true" class="abs"><img src="{{asset('img/cross-icon.png" width="24" height="24')}}" alt=""></span>
                     </button>
                 </div>
                 <p class="fs-18-light">Paste the URL of the blog, Instagram, or Twitter account of the profile you want to import.
@@ -1253,7 +1488,7 @@
                             <option>2</option>
                             <option>3</option>
                         </select>
-                        <span class="select-arrow abs"><img src="img/angle-down.png" alt=""></span>
+                        <span class="select-arrow abs"><img src="{{asset('img/angle-down.png')}}" alt=""></span>
                     </div>
                     <div class="modal-footer border-top-0 p-0 mt-4">
                         <button type="button" class="btn-header bg-red m-0 h--50">Import</button>
@@ -1267,7 +1502,7 @@
             <div class="modal-content pb-5 pt-4">
                 <div class="modal-header border-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><img src="img/cross-icon.png" alt=""></span>
+                        <span aria-hidden="true"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -1276,16 +1511,16 @@
                         <p class="fs-18-gray">USD$ 10/per month</p>
                         <p class="fs-18-gray mb-5">loremipsum@gmail.com</p>
                         <div class="form-group relative">
-                            <img src="img/cart-icon.png" alt="" class="abs img-icon">
+                            <img src="{{asset('img/cart-icon.png')}}" alt="" class="abs img-icon">
                             <input type="number" class="form-control pl-5 h--45" placeholder="Card number">
                         </div>
                         <div class="d-flex justify-content-between w-100 mt-4">
                             <div class="form-group relative pr-3 w-50">
-                                <img src="img/calendar.png" alt="" class="abs img-icon">
+                                <img src="{{asset('img/calendar.png')}}" alt="" class="abs img-icon">
                                 <input type="date" class="form-control fs-14 pl-5 h--45">
                             </div>
                             <div class="form-group relative w-50 ">
-                                <img src="img/lock-icon.png" alt="" class="abs img-icon">
+                                <img src="{{asset('img/lock-icon.png')}}" alt="" class="abs img-icon">
                                 <input type="date" class="form-control fs-14 pl-5 h--45">
                             </div>
                         </div>
