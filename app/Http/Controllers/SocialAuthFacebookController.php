@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
+use App\Models\User;
 use App\Services\SocialFacebookAccountService;
 use function Symfony\Component\Translation\t;
 
@@ -35,6 +36,9 @@ class SocialAuthFacebookController extends Controller
     public function callback(SocialFacebookAccountService $service)
     {
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
+        $userModel = new User;
+        $userModel->facebook_id=$user->getId();
+        $userModel->save();
 //        $fb = new \Facebook\Facebook([
 //            'app_id' => '1522624067942900',
 //            'app_secret' => 'd964790080176580274538dc800ed633',
@@ -49,7 +53,7 @@ class SocialAuthFacebookController extends Controller
 //            dd('Facebook SDK returned an error: ' . $e->getMessage());
 //        }
 //        $me = $response->getGraphUser();
-        Auth::login($user,true);
+        Auth::login($userModel,true);
         return view('clientDashboard', compact('user', $user));
     }
 

@@ -31,7 +31,7 @@ class InstagramAuthController extends Controller
      */
     public function callback(SocialInstagramAccountService $service)
     {
-        $user = $service->createOrGetUser(Socialite::driver('instagram')->stateless()->user());
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
         auth()->login($user);
         return view('clientDashboard', compact('user', $user));
     }

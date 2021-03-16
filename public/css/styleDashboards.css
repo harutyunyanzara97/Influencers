@@ -705,10 +705,13 @@ li {
     opacity: 0;
 }
 #upload-label {
+    margin-left: 20px;
     position: absolute;
     top: 35%;
     left: 1rem;
+    cursor: pointer;
 }
+
 .image-area {
     border: 2px dashed rgba(255, 255, 255, 0.7);
     padding: 1rem;

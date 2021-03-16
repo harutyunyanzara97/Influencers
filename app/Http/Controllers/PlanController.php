@@ -18,7 +18,8 @@ class PlanController extends Controller
     }
     public function show(Plan $plan, Request $request)
     {
-        return view('plans.show', compact('plan'));
+        $cards=Card::where('user_id',Auth::id())->get();
+        return view('plans.show', compact('plan','cards'));
     }
     public function billing(Request $request)
     {

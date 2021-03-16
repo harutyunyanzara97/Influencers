@@ -28,6 +28,7 @@ class User extends Authenticatable
         'avatar_url',
         'gender',
         'category',
+        'facebook_id',
         'company_name'
     ];
 
