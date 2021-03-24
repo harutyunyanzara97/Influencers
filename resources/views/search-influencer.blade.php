@@ -1,88 +1,76 @@
+<div class="input-group m-0 header-input-section d-flex" style="width: 75%!important;">
+    <span class="abs"><img src="img/search-icon.png" width="16" height="17" alt=""></span>
+    <input type="text" class="form-control m-0" placeholder="Search the directory" id="search" name="search" aria-label="Search the directory" aria-describedby="button-addon2">
+    <div class="input-group-append">
+        <button class="" type="button" id="button-addon2"><img src="img/search-settings.png" alt=""></button>
+    </div>
+
+    <div id="menu"> <button class="btn-header bg-red ml-4"><img src="img/filter.png" alt="" class="mr-2">Filter</button></div>
+    <div id="menu-view" class="d-none"> <button class="btn-header bg-transparent ml-4"><img src="img/view.png" alt="" class="mr-2">View</button></div>
+
+<button class="btn-header bg-purple ml-4" data-toggle="modal" data-target="#ImportModalCenter"><img src="img/import.png" alt="" class="mr-2">Import</button>
+    <div id="lgMenu" class="px--20">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="fs-24-bold-black mb-0 fw-normal">Filter</h2>
+            <span id="exit"><img src="{{asset('img/cross-icon.png')}}" alt=""></span>
+        </div>
+        <div class="w-100">
+            <button class="btn-clear-filter">Clear Filter</button>
+        </div>
+        <h4 class="title-12 py-4">Location</h4>
+        <h4 class="title-12 py-4">Bookmarks & lists</h4>
+    </div>
+</div>
+<div class="modal fade" id="ImportModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="ImportModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-32-64">
+            <div class="modal-header border-bottom-0 mb-3">
+                <h5 class="modal-title title-48 " id="exampleModalLongTitle"><img
+                        src="{{asset('img/import-icon.png')}}" alt=""> Import</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="abs"><img src="{{asset('img/cross-icon.png')}}" width="24"
+                                                                      height="24" alt=""></span>
+                </button>
+            </div>
+            <p class="fs-18-light">Paste the URL of the blog, Instagram, or Twitter account of the profile you
+                want to import.
+                Import multiple profiles at once by adding URLs on seperate lines.</p>
+            <form action="#" class="mt-4">
+                <div class="form-group">
+                    <label for="url" class="fs-12-light-gray">URLs</label>
+                    <textarea class="form-control no-resize" id="url" rows="6"></textarea>
+                </div>
+                <div class="relative mb-3 mt-4">
+                    <label class="fs-12-light-gray">Import profiles into list:</label>
+                    <select class="form-control h--50">
+                        <option disabled selected>Import profiles into list</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <span class="select-arrow abs"><img src="{{asset('img/angle-down.png')}}" alt=""></span>
+                </div>
+                <div class="modal-footer border-top-0 p-0 mt-4">
+                    <button type="button" class="btn-header bg-red m-0 h--50">Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
                 <div class="tab-pane " id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <div class="p-30 main-blocks-div">
                         <h2 class="fs-24-bold-black text-left m-b--30">Find influencers in these topics</h2>
-                        <div class="d-flex flex-wrap" style="max-width: calc(100% - 350px); width: 100%">
+                        <div class="d-flex flex-wrap main" style="max-width: calc(100% - 350px); width: 100%">
+                            @if($categories)
+                            @foreach($categories as $category)
                             <div class="mr-3 mb-3 influecer-area">
                                 <div class="abs"></div>
-                                <img src="{{asset('img/Fashion.png')}}" alt="">
-                                <h3 class="influecer-title">Fashion</h3>
+                                <img src="{{asset('img/'.$category->img_url)}}" alt="">
+                                <h3 class="influecer-title">{{$category->name}}</h3>
                             </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/Makeup-for-stunning-and-Adorable-Look-1%201.png')}}" alt="">
-                                <h3 class="influecer-title">Beauty</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/travel-blog%201.png')}}" alt="">
-                                <h3 class="influecer-title">Travel</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/turtle-caught%201.png')}}" alt="">
-                                <h3 class="influecer-title">Animals</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/cardio-workout%201.png')}}" alt="">
-                                <h3 class="influecer-title">Health & fitness</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="img/img.png" alt="">
-                                <h3 class="influecer-title">Food & drink</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/maui-weddings-home1%201.png')}}" alt="">
-                                <h3 class="influecer-title">Wedding</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/InteriorDesign_10_WashingtonDC_-Katherine-Robert%201.png')}}"
-                                     alt="">
-                                <h3 class="influecer-title">Home interior</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/inf9.png')}}" alt="">
-                                <h3 class="influecer-title">Business & finance</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/inf10.png')}}" alt="">
-                                <h3 class="influecer-title">Baking</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/inf11.png')}}" alt="">
-                                <h3 class="influecer-title">Sport</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/inf12.png')}}" alt="">
-                                <h3 class="influecer-title">Technology</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/Fashion.png')}}" alt="">
-                                <h3 class="influecer-title">Fashion</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/Makeup-for-stunning-and-Adorable-Look-1%201.png')}}" alt="">
-                                <h3 class="influecer-title">Beauty</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/travel-blog%201.png')}}" alt="">
-                                <h3 class="influecer-title">Travel</h3>
-                            </div>
-                            <div class="mr-3 mb-3 influecer-area">
-                                <div class="abs"></div>
-                                <img src="{{asset('img/turtle-caught%201.png')}}" alt="">
-                                <h3 class="influecer-title">Animals</h3>
-                            </div>
+                            @endforeach
+                                @endif
                         </div>
                     </div>
                     <p class="px-3 my-3"><img src="{{asset('img/search-icon-dark.png')}}" alt=""> 92,310 found</p>
@@ -388,3 +376,24 @@
 
 
                 <script src="{{asset('js/clientDashboard.js')}}" type="text/javascript"></script>
+<script>
+    $('#search').on('keyup', function () {
+        let value = $(this).val();
+        $.ajax({
+            type: 'get',
+            url: '{{URL::to('searchCat')}}',
+            data: {'search': value},
+            success: function (data) {
+                $('.main').empty();
+                $(data).each(function (val, i) {
+                    let img=i.img_url;
+                    $('.main').append(`<div class='mr-3 mb-3 influecer-area'>
+                                <div class='abs'></div>
+                                <img src='{{asset("img")}}/${img}'>
+                                <h3 class='influecer-title'>${i.name}</h3>
+                            </div>`);
+                })
+            }
+        })
+    })
+</script>

@@ -1,4 +1,4 @@
-@include('layout.header')
+@extends('layouts.app')
 
 
 <main class="">

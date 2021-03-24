@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
+    \Illuminate\Support\Facades\Artisan::call('route:clear');
     return view('auth.login');
 });
 
@@ -26,8 +27,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/subscription', [App\Http\Controllers\SubscriptionController::class,'create'])->name('subscription');
     Route::get('/search-influencer', [App\Http\Controllers\UserController::class,'search'])->name('searchInfluencer');
 });
-//Route::get('/register', [App\Http\Controllers\UserController::class, 'register'])->name('register');
-Route::get('/account', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
+
+
+Route::get('/profile', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
 Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])->name('contact');
 Route::get('/changePassword', [App\Http\Controllers\UserController::class, 'showChangePasswordForm'])->name('showChangePasswordForm');
 Route::get('/statistics', [App\Http\Controllers\CampaignController::class, 'statistics'])->name('statisticsCampaign');
@@ -38,13 +40,13 @@ Route::post('/store', [App\Http\Controllers\CampaignController::class, 'store'])
 Route::post('/storeProfile', [App\Http\Controllers\UserController::class, 'storeProfile'])->name('storeProfile');
 Route::get('/create', [App\Http\Controllers\CampaignController::class, 'create'])->name('create');
 Route::get('/index', [App\Http\Controllers\CampaignController::class, 'index'])->name('CampaignsLists');
-Route::get('/influencer', [App\Http\Controllers\UserController::class, 'influencer'])->name('influencer');
 Route::post('card', [App\Http\Controllers\SubscriptionController::class,'card_create'])->name('stripe.create');
 Route::get('/redirect', [App\Http\Controllers\SocialAuthFacebookController::class, 'redirect'])->name('redirect');
 Route::get('/callback', [App\Http\Controllers\SocialAuthFacebookController::class, 'callback'])->name('callback');
 Route::get('/instagram', [App\Http\Controllers\InstagramAuthController::class, 'redirect']);
-Route::get('/callbackInstagram', [App\Http\Controllers\InstagramAuthController::class, 'callback']);
+Route::post('/callbackInstagram', [App\Http\Controllers\InstagramAuthController::class, 'callback']);
 
+Route::get('/searchCat',[App\Http\Controllers\SearchController::class,'searchCategory']);
 
 
 Route::get('/home', [App\Http\Controllers\MainController::class, 'index'])->name('home');

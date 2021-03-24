@@ -37,13 +37,15 @@
                                                         {{--                                                    <input type="hidden" name="customer_id" value="{{$card->customer}}" >--}}
                                                         <input type="hidden" name="card_id"
                                                                value="{{$card->card_id}}">
-                                                        <input type="radio" name="payment-source"
-                                                               class="group-radio"
-                                                               value="saved-card-1">
+
                                                     </div>
 
-                                                    <div id="saved-card">**** ****
-                                                        **** {{substr($card->card_number, -4)}}</div>
+                                                    <div id="saved-card d-flex">
+                                                        <input type="radio" name="payment-source"
+                                                               class="group-radio position-static"
+                                                               value="saved-card-1">**** ****
+                                                        **** {{substr($card->card_number, -4)}}
+                                                    </div>
                                                 </label>
                                             @endforeach
                                         @endif

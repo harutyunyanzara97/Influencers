@@ -18,7 +18,7 @@ class CampaignController extends Controller
     public function create(Request $request){
         $campaign = new Campaign();
         $categories = Category::all();
-        return view('createCampaign',compact('campaign','categories'));
+        return view('create-campaign',compact('campaign','categories'));
     }
     public function store(Request $request){
     $newCampaign = new Campaign();

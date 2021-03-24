@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/helper.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleDashboards.css">
-    <link rel="stylesheet" href="css/clientList.css">
-    <link rel="stylesheet" href="css/fresh-bootstrap-table.css">
-    <link rel="stylesheet" href="css/bootstrap-table.min.css">
-    <script src="js/clientList.js"></script>
-
-
-    <link rel="stylesheet" href="cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <script src="cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <title>Client List</title>
-</head>
-<body>
+@extends('layouts.app')
 <div class="d-flex" style="max-width: 1600px; position: relative">
     <div id="left-sidebar-fix" class="left-sidebar-fix">
         <div class="d-flex justify-content-center align-items-center flex-wrap  p-4">
@@ -2485,7 +2461,7 @@
         </div>
     </div>
     <div class="overlay"></div>
-</div>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -2515,5 +2491,4 @@
 </script>
 
 
-</body>
-</html>
+

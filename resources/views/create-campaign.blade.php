@@ -1,4 +1,4 @@
-@include('layout.header')
+@extends('layouts.app')
 
 <form action="{{url('/store')}}" method="post" class="pb-4" enctype="multipart/form-data">
                 @csrf

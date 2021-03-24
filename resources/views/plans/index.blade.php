@@ -16,7 +16,7 @@
                             <span class="fw-300 fs-14"> USD/month <br> Current plan</span>
                             <button data-path="{{ route('show', $plan->slug) }}"
                                     class="btn-header bg-purple ml-4 d-block h--45 d-flex @if(!$cards->isEmpty()) cardButton @else  cardButtonn @endif"
-                                    data-toggle="modal"  @if(!$cards->isEmpty()) data-target="#ModalInfluence" @else data-target="#messageModal" @endif
+                                    data-toggle="modal"  @if(!$cards->isEmpty()) data-target="#ModalInfluence" @else data-target="#ImportModalCenter" @endif
                                     style="color:#fff;align-items: center;justify-content: center">Choose
                             </button>
                             {{--                        <button type="button" class="btn-header bg-purple ml-4 d-none h--45" data-toggle="modal" data-target="#ModalInfluence">--}}
@@ -39,29 +39,17 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="modal fade" id="ImportModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="ImportModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content p-32-64">
+            <div class="modal-header border-bottom-0 mb-3">
+                <p class="modal-title title-14 " id="exampleModalLongTitle" style="font-size:14px"><img
+                        src="{{asset('img/import-icon.png')}}" alt=""> Please add a payment method in your profile</p>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true" class="abs"><img src="{{asset('img/cross-icon.png')}}" width="24"
+                                                                      height="24" alt=""></span>
                 </button>
-                <p>Please add a payment method in your profile.</p>
-                <div class="d-flex go-profile-section justify-content-center"><a class="go-profile" href="{{route('profile')}}">Go
-                        to profile</a>
-                </div>
-
-                <div class="modal-body">
-
-                </div>
-                <div class="d-flex justify-content-center mt-4 go-profile-section">
-                    <div class="modal-footer">
-                        <button type="reset" class="pull-right publish_btn mt-0" data-dismiss="modal">Cancel
-                        </button>
-                        <button class="publish_btn" data-dismiss="modal">OK</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -76,7 +64,7 @@
                 </button>
             </div>
 
-            <div class="modal-body" style="height:400px">
+            <div class="modal-body">
 
             </div>
         </div>
@@ -95,6 +83,9 @@
                 $('#ModalInfluence div.modal-body').html(response);
             }
         })
+    });
+    $('.cardButtonn').on('click', function (event) {
+        event.preventDefault();
     });
 </script>
 <script src="https://js.stripe.com/v3/"></script>

@@ -31,17 +31,6 @@ class SubscriptionController extends Controller
                     ['price' => 'price_1IDV38LV6S2YaGRA7WOHVUvo'],
                 ],
             ]);
-            dd($payment);
-//         $payment= Stripe\Charge::create ([
-//            "amount" => 100 * 150,
-//            "currency" => "inr",
-//            "source" => $request->stripeToken,
-//            "description" => "Making test payment."
-//        ]);
-//        echo '<script type="text/javascript">'
-//        , 'history.go(-1);'
-//        , '</script>';
-
         }
     }
     public function card_create(Request $request)

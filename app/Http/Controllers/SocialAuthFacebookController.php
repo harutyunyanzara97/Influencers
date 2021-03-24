@@ -36,25 +36,8 @@ class SocialAuthFacebookController extends Controller
     public function callback(SocialFacebookAccountService $service)
     {
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
-        $userModel = new User;
-        $userModel->facebook_id=$user->getId();
-        $userModel->save();
-//        $fb = new \Facebook\Facebook([
-//            'app_id' => '1522624067942900',
-//            'app_secret' => 'd964790080176580274538dc800ed633',
-//            'default_graph_version' => 'v2.10',
-//        ]);
-//        try {
-//            $response = $fb->get('/me?fields=id,name,email','EAAVo0YqyOfQBADnAO9fvRpZBIyjAyi5qPDTfrdprDManeOrF7ZC3PO92nGpZAGzdn6ZAlEIOlqJc1vHEjsgeLdxKFGHCrIIUZBfRZBiXYk7HBwnWgAD2vqKNL1IiDus1eMru9ZCb10UlsqT82ZBkgmfJlv5tXt3X98rsn1nXj3XJvzL5QL126JA0ANKMDDBYkVeSjyFjnb77RMS4kmzRFgLi');
-//        } catch(\Facebook\Exceptions\FacebookResponseException $e) {
-//            dd('Graph returned an error: ' . $e->getMessage());
-//            die();
-//        } catch(\Facebook\Exceptions\FacebookSDKException $e) {
-//            dd('Facebook SDK returned an error: ' . $e->getMessage());
-//        }
-//        $me = $response->getGraphUser();
-        Auth::login($userModel,true);
-        return view('clientDashboard', compact('user', $user));
+        Auth::login($user,true);
+        return view('client-dashboard', compact('user', $user));
     }
 
 }

@@ -4,7 +4,7 @@
     <main class="">
         <div class="d-flex align-items-center flex-wrap">
             <div class="relative">
-                <img src="img/photo.png"  alt="" class="img-fluid">
+                <img src="img/photo.png"  alt="" class="img-fluid home-img">
                 <div class="rightSide-content d-flex flex-column">
                     <div class="flex-1">
                         <a href="#" class="text-white fs-45">LOGO</a>
@@ -44,7 +44,9 @@
                             </div>
                             <div class="d-flex justify-content-between py-4">
                                 <p class="fs-18-gray">Don't have an account yet? <a href="{{url('/register')}}" class="color-red">Sign Up </a></p>
+                                @if (Route::has('password.request'))
                                 <a class="fs-18-gray" href="{{ route('password.request') }}">Forgotten your password?</a>
+                                    @endif
                             </div>
 
 

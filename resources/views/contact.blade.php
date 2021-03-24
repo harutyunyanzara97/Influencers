@@ -1,4 +1,4 @@
-@include('layout.header')
+@extends('layouts.app')
 <div class="tab-pane p-22-32" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
     <h3 class="fs-18-red">Contact with influencer</h3>
     <div class="p-22-32">

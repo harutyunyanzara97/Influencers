@@ -1,4 +1,4 @@
-@include('layout.header')
+@extends('layouts.app')
 
 <div id="tabsContent" class="tab-content px-5">
     <div id="statistics">

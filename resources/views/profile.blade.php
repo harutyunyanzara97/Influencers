@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/helper.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleDashboards.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <!--chart js-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <!--chart js-->
-    <title>Profile</title>
-</head>
-<body>
+@extends('layouts.app')
 <div class="d-flex" style="max-width: 1600px; position: relative; margin: auto; padding-bottom: 16px; background: #F5F7FB">
     <div  id="main" class="main-content profil-content">
         <div class="content-header p-10-35">
@@ -322,7 +302,7 @@
                 <div class="pb-2">
                     <div class=" border-bottom d-flex justify-content-between w-100" id="">
                         <ul id="tabs" class="nav nav-tabs px-1 profil-tabs">
-                            <li class="nav-item mr-4"><a href="clientDashboard.blade.php" data-target="#back" data-toggle="" class="nav-link smal"><i class="fa fa-angle-left mr-3" aria-hidden="true"></i>
+                            <li class="nav-item mr-4"><a href="client-dashboard.blade.php" data-target="#back" data-toggle="" class="nav-link smal"><i class="fa fa-angle-left mr-3" aria-hidden="true"></i>
  Back to list</a></li>
                             <li class="nav-item mr-4"><a href="#" data-target="#owerview" data-toggle="" class="nav-link smal">Owerview</a></li>
                             <li class="nav-item mr-4"><a href="#" data-target="#Lists" data-toggle="" class="nav-link small">Lists</a></li>
@@ -1003,7 +983,3 @@
         document.getElementById("openbtn").classList.add("d-block");
     }
 </script>
-
-
-</body>
-</html>
