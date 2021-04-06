@@ -14,7 +14,7 @@ class CreateCardsTable extends Migration
     public function up()
     {
         Schema::create('cards', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->bigInteger('card_number');
             $table->text('card_id')->nullable();
@@ -24,9 +24,9 @@ class CreateCardsTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->timestamps();
         });
-        Schema::table('cards', function($table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-        });
+//        Schema::table('cards', function($table) {
+//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+//        });
     }
 
     /**

@@ -9,12 +9,6 @@
                     <div class="flex-1">
                         <a href="#" class="text-white fs-45">LOGO</a>
                     </div>
-                    <div>
-                        <h1 class="fs-72-bold-white mb-5">Welcome to <br> company name!</h1>
-                        <p class="fs-16 text-white pt-5">
-                            By creating an account you agree to the CName <a href="#" class="color-red"> Terms of Service & Privacy Policy</a>
-                        </p>
-                    </div>
                 </div>
             </div>
             <div class="flex-1 px-140">

@@ -9,4 +9,5 @@ class MainController extends Controller
     {
         return view('client-dashboard');
     }
+
 }

@@ -11,28 +11,32 @@ use Stripe;
 use Session;
 class SubscriptionController extends Controller
 {
-    public function create(Request $request, Plan $plan)
-    {
-        $plan = Plan::findOrFail($request->get('plan'));
-        $user = $request->user();
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
-
-        if (!$user->stripe_id) {
-            $customer = \Stripe\Customer::create([
-                'email' => 'paying.useruser@gmail.com',
-            ]);
-
-            $user->stripe_id = $customer->id;
-            $user->save();
-            $payment = $stripe->subscriptions->create([
-                'customer' => 'cus_J6MdPwC0dMTbwi',
-                'items' => [
-                    ['price' => 'price_1IDV38LV6S2YaGRA7WOHVUvo'],
-                ],
-            ]);
-        }
-    }
+//    public function create(Request $request, Plan $plan)
+//    {
+//        $plan = Plan::findOrFail($request->get('plan'));
+//        $user = $request->user();
+//        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+//        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+//
+//        if (!$user->stripe_id) {
+//            $customer = \Stripe\Customer::create([
+//                'email' => 'paying.useruser@gmail.com',
+//            ]);
+//
+//            $user->stripe_id = $customer->id;
+//            $user->save();
+//            $payment = $stripe->subscriptions->create([
+//                'customer' => 'cus_J6MdPwC0dMTbwi',
+//                'items' => [
+//                    ['price' => 'price_1IDV38LV6S2YaGRA7WOHVUvo'],
+//                ],
+//            ]);
+//
+//            echo '<script type="text/javascript">'
+//        , 'history.go(-2);'
+//        , '</script>';
+//        }
+//    }
     public function card_create(Request $request)
     {
         $user = $request->user();

@@ -46,96 +46,16 @@
                     <div class="rightSide-content-radio">
                         <div class="d-flex justify-content-lg-around pt-5">
                             <div>
+
+                                @if($tag_categories)
+                                @foreach($tag_categories as $category)
                                 <div class="form-group">
-                                    <input type="checkbox" id="Fashion" name="category[]"
-                                           value="Fashion">
-                                    <label for="Fashion">Fashion</label>
+                                    <input type="checkbox" id="{{$category->name}}" name="category[]"
+                                           value="{{$category->name}}" {{  (strpos(Auth::user()->category, $category->name) !== false ? ' checked' : '') }}>
+                                    <label for="{{$category->name}}">{{$category->name}}</label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Beauty" name="category[]" value="Beauty">
-                                    <label for="Beauty">Beauty</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Travel" name="category[]" value="Travel">
-                                    <label for="Travel">Travel</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Animals&pets" name="category[]"
-                                           value="Animals&pets">
-                                    <label for="Animals&pets">Animals & pets</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Health&fitness" name="category[]"
-                                           value="Health&fitness">
-                                    <label for="Health&fitness">Health & fitness</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Food&drink" name="category[]"
-                                           value="Food&drink">
-                                    <label for="Food&drink">Food & drink</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Sustainability" name="category[]"
-                                           value="Sustainability">
-                                    <label for="Sustainability">Sustainability</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Wedding" name="category[]"
-                                           value="Wedding">
-                                    <label for="Wedding">Wedding</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Home interior" name="category[]"
-                                           value="Home interior">
-                                    <label for="Home interior">Home interior</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Business & finance" name="category[]"
-                                           value="Business & finance">
-                                    <label for="Business & finance">Business & finance</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Baking" name="category[]" value="Baking">
-                                    <label for="Baking">Baking</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Sport" name="category[]" value="Sport">
-                                    <label for="Sport">Sport</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Technology" name="category[]"
-                                           value="Technology">
-                                    <label for="Technology">Technology</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Books" name="category[]">
-                                    <label for="Books">Books</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Environment" name="category[]">
-                                    <label for="Environment">Environment</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Family" name="category[]">
-                                    <label for="Family">Family</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Music" name="category[]">
-                                    <label for="Music">Music</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Organic food" name="category[]" value="">
-                                    <label for="Organic food">Organic food</label>
-                                </div>
-                                <div class="form-group">
-                                    <input type="checkbox" id="Photography" name="category[]"
-                                           value="Photography">
-                                    <label for="Photography">Photography</label>
-                                </div>
+                                @endforeach
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -143,7 +63,7 @@
             </div>
             <div class="d-flex justify-content-end max-w--440">
                 <button class="btn-red-bordered mt-4 br-5 m-l--20">Cancel</button>
-                <button class="btn-red mt-4 br-5 m-l--20">Save</button>
+                <button class="btn-red mt-4 br-5 m-l--20" type="submit">Save</button>
             </div>
         </form>
         <p class="fs-13-gray px-5 mt-5 pt-5 text-right ">

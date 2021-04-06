@@ -14,7 +14,7 @@ class CreateCampaignsTable extends Migration
     public function up()
     {
         Schema::create('campaigns', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->string('title');
             $table->longText('details')->nullable();
@@ -29,9 +29,9 @@ class CreateCampaignsTable extends Migration
             $table->dateTime('end_date')->nullable();
             $table->timestamps();
         });
-        Schema::table('campaigns', function($table) {
-            $table->foreign('user_id')->references('id')->on('users');
-        });
+//        Schema::table('campaigns', function($table) {
+//            $table->foreign('user_id')->references('id')->on('users');
+//        });
     }
 
     /**

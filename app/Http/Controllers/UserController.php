@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag_category;
 use App\Models\User;
+use Facebook\Facebook;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +19,8 @@ class UserController extends Controller
 {
     public function profile()
     {
-        return view('account');
+        $tag_categories=Tag_category::all();
+        return view('account',compact('tag_categories'));
     }
 
     public function storeProfile(Request $request)

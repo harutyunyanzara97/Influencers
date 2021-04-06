@@ -356,7 +356,7 @@
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" style="height: calc(100vh - 57px)">
                 <div class="h-100 d-flex flex-column justify-content-sm-top table-responsive">
-                       
+
                         <!-- <div class="row">
                             <div class="col-sm-12">
                               <div class="panel panel-default panel-table">
@@ -383,7 +383,7 @@
                                         <th scope="col">Hashtags</th>
                                         <th scope="col">Mentions</th>
 
-                                        
+
                                         <th scope="col">Website</th>
                                         <th scope="col">Number of Posts</th>
                                         <th scope="col">Other Social Media Accounts</th>
@@ -435,20 +435,20 @@
                                                 <p class="client-list-value-text"><span>Germany 📧 <br> bibisbeautypalace@web.de ❤️<br> @julienco_ 👇🏼👇🏼👇🏼</span></p>
                                             </a>
                                         </td>
-                                        
+
                                       </tr>
                                   </tbody>
-                                  
+
                                   </table>
                                 </div>
                               </div>
                             </div>
                           </div> -->
 
-                          <!-- <table 
-                            data-toggle="table" 
-                            data-pagination="true" 
-                            data-search="true" 
+                          <!-- <table
+                            data-toggle="table"
+                            data-pagination="true"
+                            data-search="true"
                             data-url="data.json">
                             <thead class="client-list-thead">
                                 <tr>
@@ -463,8 +463,8 @@
                             </thead>
                         </table> -->
 
-                        
-                            
+
+
 
                     </div>
                 </div>

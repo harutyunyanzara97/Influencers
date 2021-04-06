@@ -80,7 +80,7 @@
                 <div class="d-flex">
                     <input type="hidden" name="code" value="EAAKOjXPe6CkBAEQaEtyAHwZCbhFvdvbriTts0vjyJBX6xuHL3MSZAQeBWOeGKHqIjIyUf6fYQ7HCT6WV7llOi9qWOnBHwje8GwrZBuiaVkTD7zSiInqsoemDKEhkduZCxkOuFCjmBZB9hLCUNmPNosjDiM8UOqY5v6CwwuLE5oZCEsvg2lRq5biflcQkt49AHCqBwIL2nZAmmFwbR7XZBRPakW6eIXeQvf5Uyb9ekIDbUjkmPulUChbJ">
                     <span class="icon-Group searchInfluencer">   Search</span>
-                    <span class="nav-link-title search">  Search </span>
+{{--                    <span class="nav-link-title search">  Search </span>--}}
                 </div>
                 </form>
             </a>

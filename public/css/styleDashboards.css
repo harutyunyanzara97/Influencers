@@ -935,6 +935,9 @@ li {
 .icon-List {
     position: relative;
 }
+.left-sidebar-fix .nav-pills .nav-link.active, .left-sidebar-fix .nav-pills .show>.nav-link {
+    color: #FF2A13;
+}
 .icon-List::before {
     content: "";
     position: absolute;

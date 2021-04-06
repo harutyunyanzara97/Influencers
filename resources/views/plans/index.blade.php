@@ -15,8 +15,8 @@
                             <span class="fs-24-bold-black color-gray mr-2">${{ number_format($plan->cost, 2) }}</span>
                             <span class="fw-300 fs-14"> USD/month <br> Current plan</span>
                             <button data-path="{{ route('show', $plan->slug) }}"
-                                    class="btn-header bg-purple ml-4 d-block h--45 d-flex @if(!$cards->isEmpty()) cardButton @else  cardButtonn @endif"
-                                    data-toggle="modal"  @if(!$cards->isEmpty()) data-target="#ModalInfluence" @else data-target="#ImportModalCenter" @endif
+                                    class="btn-header bg-purple ml-4 d-block h--45 d-flex"
+                                    data-toggle="modal"
                                     style="color:#fff;align-items: center;justify-content: center">Choose
                             </button>
                             {{--                        <button type="button" class="btn-header bg-purple ml-4 d-none h--45" data-toggle="modal" data-target="#ModalInfluence">--}}
@@ -51,6 +51,7 @@
                                                                       height="24" alt=""></span>
                 </button>
             </div>
+
         </div>
     </div>
 </div>

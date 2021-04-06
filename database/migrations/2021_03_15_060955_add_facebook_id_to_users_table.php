@@ -13,9 +13,9 @@ class AddFacebookIdToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('facebook_id')->nullable();
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            $table->string('facebook_id')->nullable();
+//        });
     }
 
     /**
@@ -25,8 +25,8 @@ class AddFacebookIdToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+//        Schema::table('users', function (Blueprint $table) {
+//            //
+//        });
     }
 }

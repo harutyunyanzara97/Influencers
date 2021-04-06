@@ -161,8 +161,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class,
-        Andreyco\Instagram\Support\Laravel\ServiceProvider\Instagram::class,
+        \SocialiteProviders\Manager\ServiceProvider::class,
+//        \League\OAuth2\Client\Provider\Instagram::class,
+
 
         /*
          * Package Service Providers...
@@ -176,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+//        \App\Providers\InstagramServiceProvider::class,
 
 
     ],
@@ -230,7 +232,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Instagram' => Andreyco\Instagram\Support\Laravel\Facade\Instagram::class,
+
+//        'Instagram' => Andreyco\Instagram\Support\Laravel\Facade\Instagram::class,
 
     ],
 

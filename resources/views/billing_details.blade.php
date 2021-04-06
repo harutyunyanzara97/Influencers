@@ -16,13 +16,12 @@
             </div>
         </div>
         <div class="fs-18-red my-4">Payment</div>
-        <div class="card">
+        <div class="card asdsadasddsa">
             <div class="d-flex justify-content-between align-items-center px-3 py-3 border-bottom">
                 <div>
-                    <span class="fs-18-gray-med">Credit Card: @if(!$cards)<span class="fw-300">None</span></span>
+                    <span class="fs-18-gray-med">Credit Card: @if(!$cards)<span class="fw-300">None</span>
                     @else
                         <div class="cards">
-
                             @foreach($cards as $card)
                                 <div class="card-i">
                                     <div class="bank-name" title="BestBank">{{$card->brand}}</div>
