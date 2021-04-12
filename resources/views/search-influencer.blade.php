@@ -1,3 +1,4 @@
+@include('layout.header')
 <div class="input-group m-0 header-input-section d-flex" style="width: 75%!important;">
     <span class="abs"><img src="img/search-icon.png" width="16" height="17" alt=""></span>
     <input type="text" class="form-control m-0 search" placeholder="Search the directory" id="search" name="search" aria-label="Search the directory" aria-describedby="button-addon2">
@@ -69,7 +70,6 @@
                         <img src="{{asset('img/'.$category->img_url)}}" alt="">
                         <h3 class="influecer-title">{{$category->name}}</h3>
                     </div>
-                    <a href="{{route('searchTag')}}">sddfdfg</a>
                 @endforeach
             @endif
         </div>
@@ -393,20 +393,23 @@
                 $('.main').empty();
                 $(data).each(function (val, i) {
                     let a=i.data;
-                    for(var j = 0; j < a.length; j++) {
-                        for (var anItem in a[j]) {
-                            console.log(a[j][anItem]);
-                            let img = a[j][anItem][5];
-                            let post=a[j][anItem][6]
+                    console.log(a);
+                    for(var j in  a) {
+                        var item = a[j];
 
-                            $('.main').append(`<div class='mr-3 mb-3 influecer-areas'>
-                                <div class='abss'></div>
-                                <a href="${img}">Image</a>
-                                <a href="${post}">See the post</a>
-                                <p>${a[j][anItem][0]}</p>
-                                <p>Likes count - ${a[j][anItem][3]}</p>
-                                <p>Comments count - ${a[j][anItem][1]}</p>
-                            </div>`);
+                        if (item.media_url && item.media_type==="IMAGE") {
+
+                            $('.main').append(`<div class='mr-3 mb-3 influencer-areas d-flex justify-content-center'>
+                                    <div class='abss' style="width:35%">
+                                    <img src="${item.media_url}" width="300px" height="300px">
+                                    </div>
+                                    <div class="info-insta" style="width:50%;text-align:justify;">
+                                    <a href="${item.permalink}" style="color:darkolivegreen">See the post</a>
+                                    <p>${item.caption}</p>
+                                    <button style="background: #1e7e34">Likes count - ${item.like_count}</button>
+                                    <button  style="background: #1e7e34">Comments count - ${item.comments_count}</button>
+                                </div>
+                                    </div>`);
                         }
                     }
                 });

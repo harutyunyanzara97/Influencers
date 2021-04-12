@@ -226,6 +226,7 @@ class UserController extends Controller
 //
 //        // top media for hashtag
 //        $hashtagTopMediaEndpoint = ENDPOINT_BASE . $hashtagId . '/top_media';
+
 //        $hashtagTopMediaParams = array(
 //            'user_id' => $instagramAccountId,
 //            'fields' => 'id,caption,children,comments_count,like_count,media_type,media_url,permalink',
