@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'instagram' => \App\Http\Middleware\InstagramAPIMiddleware::class,
+        'influencer' => \App\Http\Middleware\IsInfluencer::class,
     ];
 }

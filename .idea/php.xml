@@ -126,6 +126,11 @@
       <path value="$PROJECT_DIR$/vendor/doctorconceptual/php-instagram-graph-sdk" />
       <path value="$PROJECT_DIR$/vendor/andreyco/instagram" />
       <path value="$PROJECT_DIR$/vendor/raiym/instagram-php-scraper" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-instagram" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-client" />
+      <path value="$PROJECT_DIR$/vendor/jakeasmith/http_build_url" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/socialiteproviders/zoho" />
     </include_path>
   </component>
   <component name="PhpUnit">

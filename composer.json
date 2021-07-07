@@ -9,19 +9,22 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "ext-curl": "*",
         "andreyco/instagram": "^4.1",
         "doctorconceptual/php-instagram-graph-sdk": "^2.0",
         "facebook/graph-sdk": "^5.7",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/cashier": "^12.6",
+        "laravel/cashier": "^12.10",
         "laravel/framework": "^8.12",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
+        "league/oauth2-instagram": "^3.0",
         "raiym/instagram-php-scraper": "^0.11.1",
-        "socialiteproviders/instagram": "^4.1"
+        "socialiteproviders/instagram": "^4.1",
+        "socialiteproviders/zoho": "^4.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

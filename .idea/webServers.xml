@@ -2,7 +2,14 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="64eecd2b-53ae-49be-af1d-0cf6517f7c72" name="sinfluencer" url="http://45.76.247.178">
+      <webServer id="195682c3-1af9-451a-8b7f-6f2201baa355" name="1336.freelancedeveloper.site" url="http://1336.freelancedeveloper.site">
+        <fileTransfer host="1336.freelancedeveloper.site" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="60b1524a-4f7f-47d5-9d74-6a8baadcf281" name="server" url="http://45.76.247.178">
         <fileTransfer rootFolder="/public_html" accessType="SFTP" host="45.76.247.178" port="22" sshConfigId="4b50bdd6-a662-42f1-8684-8b5ba03323ee" sshConfig="ivan@45.76.247.178:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
