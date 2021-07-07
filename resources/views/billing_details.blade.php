@@ -194,18 +194,6 @@
         <div class="fs-18-red my-4">Payment history</div>
         <table class="table" id="table-paymentHistory">
             <thead class="">
-{{--            <tr>--}}
-{{--                <th scope="col">Date</th>--}}
-{{--                <th scope="col">Amount</th>--}}
-{{--                <th scope="col">Description</th>--}}
-{{--                <th scope="col">Status</th>--}}
-
-{{--                <td>{{$payment->amount}}</td>--}}
-{{--                <td>{{$payment->amount}}</td>--}}
-{{--                <td>{{$payment->amount}}</td>--}}
-{{--                <td>{{$payment->amount}}</td>--}}
-
-{{--            </tr>--}}
             </thead>
             <tbody>
 

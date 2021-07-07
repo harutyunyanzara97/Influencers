@@ -9,7 +9,7 @@
                             <input type="text" class="form-control h--50 fs-14-black text-left" name="title" id="nameCampaign" placeholder="Campaign Name">
                         </div>
                         <div class="form-group">
-                            <label for="CampaignDetails" class="fs-normal-12">Campaign Details</label>
+                            <label for="CampaignDetails" class="fs-normal-12">Creative</label>
                             <input type="text" class="form-control h--50 fs-14-black text-left" name="details" id="CampaignDetails" placeholder="Campaign Details">
                         </div>
                         <div class="form-group">
@@ -22,23 +22,17 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="CampaignHashTags" class="fs-normal-12">Post famous words</label>
+                            <label for="CampaignHashTags" class="fs-normal-12">Hashtags</label>
                             <input type="text" class="form-control h--50 fs-14-black text-left" name="hashtags" id="CampaignHashTags" placeholder="Post famous words">
                         </div>
                     </div>
                     <div class="flex-1 px-4">
                         <div class="form-group">
-                            <label for="CampaignCost" class="fs-normal-12">Cost Per Post Rate</label>
+                            <label for="CampaignCost" class="fs-normal-12">Budget</label>
                             <input type="number" class="form-control h--50 fs-14-black text-left" name="per_post_rate" id="CampaignCost" placeholder="Cost Per Post Rate">
                         </div>
-                        <div class="form-group">
-                            <label for="CampaignGEO" class="fs-normal-12">GEO</label>
-                            <input type="text" class="form-control h--50 fs-14-black text-left" name="location" id="CampaignGEO" placeholder="GEO">
-                        </div>
-                        <div class="form-group">
-                            <label for="URLCampaign" class="fs-normal-12">Landing Page URL</label>
-                            <input type="url" class="form-control h--50 fs-14-black text-left" name="url" id="URLCampaign" placeholder="Landing Page URL">
-                        </div>
+
+
                         <div class="form-group">
                             <label for="CampaignDate" class="fs-normal-12">Start Date and End Date</label>
                             <input type="date" class="form-control h--50 fs-14-black text-left" name="start_date" id="CampaignDate" placeholder="Start Date">
@@ -56,6 +50,7 @@
                 </div>
                 <button type="submit" class="btn-red mt-4 br-5 m-l--20">Submit</button>
             </form>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <!-- <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
@@ -85,5 +80,9 @@
         document.getElementById("closebtn").classList.add("d-none");
         document.getElementById("openbtn").classList.add("d-block");
     }
+
+
+
+
 </script>
 

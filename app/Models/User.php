@@ -54,5 +54,14 @@ class User extends Authenticatable
     {
         return $this->id;
     }
+    public function rating_campaigns()
+    {
+        return $this->belongsToMany(Campaign::class, 'ratings', 'rater_id', 'leader_id');
+    }
+
+    public function campaign_raters()
+    {
+        return $this->belongsToMany(Campaign::class, 'ratings', 'leader_id', 'rater_id');
+    }
 
 }

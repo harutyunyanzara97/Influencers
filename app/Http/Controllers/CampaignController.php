@@ -4,21 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Campaign;
 use App\Models\Category;
+use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Redirect;
+use Illuminate\Support\Facades\Redirect;
 class CampaignController extends Controller
 {
     public function index(Request $request)
     {
-        $campaigns = Campaign::where('user_id', Auth::user()->getId())->get();
-        return view('campaignsAndLists', compact('campaigns', $campaigns));
+        $campaign=Campaign::where('id','1')->first();
+        $campaigns = Campaign::with('category')->where('user_id', Auth::id())->get();
+        return view('campaignsAndLists', compact('campaign','campaigns', $campaigns));
     }
     public function create(Request $request){
-        $campaign = new Campaign();
         $categories = Category::all();
-        return view('create-campaign',compact('campaign','categories'));
+        return view('create-campaign',compact('categories'));
     }
     public function store(Request $request){
     $newCampaign = new Campaign();
@@ -43,11 +44,10 @@ class CampaignController extends Controller
 
             }
         }
-        echo '<script type="text/javascript">'
-        , 'history.go(-2);'
-        , '</script>';
+
     }
     public function statistics(){
         return view('statistics');
     }
+
 }

@@ -57,11 +57,5 @@ class SearchController extends Controller
         }
         $data=$response->getDecodedBody();
         return Response($data);
-//        if ($request->ajax()) {
-//            $category = Tag_category::where('name', 'LIKE', '%' . $request->search . "%")->get();
-//            if ($category) {
-//                return Response($category);
-//            }
-//        }
     }
 }

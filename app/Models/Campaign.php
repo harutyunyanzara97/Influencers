@@ -28,6 +28,10 @@ class Campaign extends Model
         return $this->belongsTo(User::class,'user_id');
     }
     public function category() {
-        return $this->belongsToMany(Category::class,'category_id');
+        return $this->belongsTo(Category::class,'category_id');
+    }
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
     }
 }

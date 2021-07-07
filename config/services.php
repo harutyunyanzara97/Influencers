@@ -35,13 +35,15 @@ return [
         'redirect' => env('FACEBOOK_REDIRECT'),
     ],
     'instagram' => [
-        'client_id' => env('INSTAGRAM_KEY'),
-        'client_secret' => env('INSTAGRAM_SECRET'),
-        'redirect' => env('INSTAGRAM_REDIRECT_URI')
+        'client_id' => '2883480005030754',
+        'client_secret' => '89f7a8b00e4622c8d00d7db316b05781',
+        'redirect' => 'http://localhost:8000/callbackInstagram',
+        'scopes'        => 'basic public_content'
     ],
     'stripe' => [
         'model'  => User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
 ];

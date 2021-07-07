@@ -34,6 +34,7 @@ Route::get('/contact', [App\Http\Controllers\UserController::class, 'contact'])-
 Route::get('/changePassword', [App\Http\Controllers\UserController::class, 'showChangePasswordForm'])->name('showChangePasswordForm');
 Route::get('/statistics', [App\Http\Controllers\CampaignController::class, 'statistics'])->name('statisticsCampaign');
 Route::get('/instagramApi', [App\Http\Controllers\UserController::class, 'instagram'])->name('instagramApi');
+Route::get('/influencer', [App\Http\Controllers\UserController::class, 'influencer'])->name('influencer');
 Route::post('/changePassword', [App\Http\Controllers\UserController::class, 'changePassword'])->name('changePassword');
 Route::post('/password', [App\Http\Controllers\UserController::class, 'passwordForget'])->name('passwordForget');
 Route::post('/store', [App\Http\Controllers\CampaignController::class, 'store'])->name('store');

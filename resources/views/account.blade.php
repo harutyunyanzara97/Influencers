@@ -9,9 +9,11 @@
             @csrf
             <div class="text-center">
                 <div class="prof-img-area m-0--auto">
+                    @auth
                     @if(Auth::user()->avatar_url)
                         <img src="{{asset('img/'.Auth::user()->avatar_url)}}" alt="" width="100%">
                     @endif
+                    @endauth
                     <div class="abs d-flex justify-content-center">
                         <input id="upload" type="file" name="photo[]" onchange="readURL(this);"
                                class="form-control">

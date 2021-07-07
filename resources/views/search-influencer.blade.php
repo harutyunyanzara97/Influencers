@@ -408,12 +408,24 @@
                                     <p>${item.caption}</p>
                                     <button style="background: #1e7e34">Likes count - ${item.like_count}</button>
                                     <button  style="background: #1e7e34">Comments count - ${item.comments_count}</button>
+                                    <button style="color: #8fd19e"> Connect with influencers</button>
                                 </div>
                                     </div>`);
+                                let url=item.permalink;
+                            $.ajax({
+                                url:url,
+                                type:'get',
+                                success:function(response){
+                                    console.log(response);
+                                }
+                            });
                         }
                     }
                 });
             }
         });
     });
+</script>
+<script>
+
 </script>
