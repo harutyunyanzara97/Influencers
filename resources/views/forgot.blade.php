@@ -14,8 +14,8 @@
 <body>
 <form action="{{url('passwordForget')}}" method="post" class="pt-2">
     @csrf
-<input type="email" name="email" id="email">
-<button type="submit">Submit</button>
+    <input type="email" name="email" id="email">
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>

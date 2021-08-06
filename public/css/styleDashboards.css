@@ -1,3 +1,4 @@
+
 body {
     font-family: "Roboto", sans-serif;
 }
@@ -33,7 +34,7 @@ body {
     width: 240px;
 }
 .left-sidebar-fix.open-sidebar>div {
-   justify-content: space-between!important;
+    justify-content: space-between!important;
 }
 .left-sidebar-fix .nav-pills .nav-link  {
     height: 40px;
@@ -53,7 +54,7 @@ body {
     border-radius: 0;
 }
 .main-content {
-   width: 100%;
+    width: 100%;
     background: #F5F7FB;
     margin-left: 80px;
     min-height: 100vh;
@@ -122,19 +123,19 @@ body {
 .btn-fb:hover {
     box-shadow: 0 0 3px 3px rgba(59, 89, 152, 0.3);
 }
-
 .btn-fb .fb-content p {
     color: rgba(255, 255, 255, 0.87);
 }
 .insta-default {
-    margin: auto;
+    margin-top: -13px;
     display: flex;
     align-items: center;
+    height: 72px;
     font-size: 14px;
     padding: 12px;
 }
 .insta-default a {
-    padding: 13px 28px;
+    padding: 13px 30px;
     display: block;
     background-color: #E33E5C;
     box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
@@ -143,17 +144,27 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    margin-top: -11px;
     transition: all .3s;
 }
 .insta-default :hover {
     box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.15);
     transition: all .3s;
-    }
+}
 .insta-default i {
     color: #FFF;
     font-size: 18px;
-      }
+}
+.info-insta {
+    width:50%;
+    text-align:justify;
+}
+.abss {
+    width: 35%;
+}
+.influencer-areas {
+    display: flex;
+    justify-content:center;
+}
 .icon-file-1:before {
     content: "\e900";
     color: #4c505f;
@@ -162,7 +173,7 @@ body {
     cursor: pointer;
 }
 #main{
-    margin-left: 229px;
+    margin-left: 260px;
 }
 .avatar-area {
     border-bottom: 0.5px solid #E7E7E7;
@@ -274,7 +285,7 @@ body {
 
 .influecer-area:hover .abs{
     display: block;
- }
+}
 .influecer-title {
     position: absolute;
     left: 23px;
@@ -655,11 +666,11 @@ li {
     position: relative;
 }
 .prof-img-area .abs {
-    position: absolute;
-    top: 50%;
+    position: static !important;
+    top: 100%;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
     text-align: center;
     background-color: #d9d9d9a6;
     padding-top: 10px;
@@ -688,7 +699,7 @@ li {
 }
 #table-paymentHistory.table td,
 #table-paymentHistory.table th {
-  text-align: center;
+    text-align: center;
 }
 #table-paymentHistory.table td {
     border-top: none;
@@ -756,7 +767,7 @@ li {
     box-shadow: 0 0 4px rgba(255, 42, 19, 0.4);
 }
 .paymentPlan.active button.bg-purple{
-   display: block!important;
+    display: block!important;
 }
 .img-icon.abs {
     position: absolute;
@@ -1181,17 +1192,17 @@ button.btn-list-compaings:first-child {
 }
 
 .analytics_container {
-margin-top: 41px;
-background: #FFFFFF;
-box-sizing: border-box;
-border-radius: 10px;
+    margin-top: 41px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 ul.analytics_ul {
-display: flex;
-align-items: center;
-margin-bottom: 0rem;
-background-color: #F5F7FB;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0rem;
+    background-color: #F5F7FB;
 }
 .tabcontent {
     display: none;
@@ -1237,14 +1248,14 @@ section.tabs article.selected {
 /*---------------------------------------------------*/
 
 ul.analytics_ul li {
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 14px;
-line-height: 16px;
-color: #000000;
-margin-left: 38px;
-text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-left: 38px;
+    text-align: center;
 }
 
 ul.analytics_ul li:last-child {
@@ -1254,14 +1265,14 @@ ul.analytics_ul li:last-child {
 }
 
 ul.analytics_ul li:first-child {
-background: #FFFFFF;
-border: 0.5px solid #BFC5CF;
-border-bottom: none;
-box-sizing: border-box;
-border-radius: 10px 10px 0 0!important;
-width: 136px;
-padding: 19px 0;
-margin-left: 0;
+    background: #FFFFFF;
+    border: 0.5px solid #BFC5CF;
+    border-bottom: none;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0!important;
+    width: 136px;
+    padding: 19px 0;
+    margin-left: 0;
 }
 
 
@@ -1363,96 +1374,96 @@ ul.analytics_block_ul a:nth-of-type(3) {
 }
 
 .audience_geography_age_ethnicity_container {
-background: #FFFFFF;
-border: 0.5px solid #BFC5CF;
-box-sizing: border-box;
-border-radius: 10px;
-margin-bottom: 47px;
-margin-top: 43px;
-display: flex;
-padding: 26px 0 29px 25px;
+    background: #FFFFFF;
+    border: 0.5px solid #BFC5CF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 47px;
+    margin-top: 43px;
+    display: flex;
+    padding: 26px 0 29px 25px;
 }
 .audience_geography {
 }
 
 .audience_geography h2  {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-color: #000000;
-margin-bottom: 28px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    margin-bottom: 28px;
 }
 
 .audience_geography h5  {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 16px;
-margin-bottom: 7px;
-color: #000000;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 7px;
+    color: #000000;
 }
 
 p,h5 {
-margin: 0;
+    margin: 0;
 }
 
 .audience_geography p  {
-margin-bottom: 8px;
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 12px;
-line-height: 14px;
-color: #000000;
+    margin-bottom: 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
 }
 
 .top_bars_container {
-display: flex;
-align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
 
 .top_container {
-display: flex;
+    display: flex;
 }
 
 .top {
 }
 
 .top_bars_block {
-text-align: center;
-margin-right: 7px;
+    text-align: center;
+    margin-right: 7px;
 }
 
 .top_bars_block div {
-width: 48px;
-height: 164px;
-background: #C9D5E0;
-text-align: center;
+    width: 48px;
+    height: 164px;
+    background: #C9D5E0;
+    text-align: center;
 }
 
 .top_bars_block:nth-of-type(2) div{
-height: 123px;
+    height: 123px;
 }
 .top_bars_block:nth-of-type(3) div{
-height: 86px;
+    height: 86px;
 }
 .top_bars_block:nth-of-type(4) div{
-height: 53px;
+    height: 53px;
 }
 .top_bars_block:nth-of-type(5) div{
-height: 25px;
+    height: 25px;
 }
 
 .top_right_block {
-margin-left: 32px;
-align-self: flex-end;
+    margin-left: 32px;
+    align-self: flex-end;
 }
 
 .top_right_block p {
-margin-bottom: 28px;
+    margin-bottom: 28px;
 }
 
 .No_geography_conatiner {
@@ -1460,49 +1471,49 @@ margin-bottom: 28px;
 }
 
 .No_geography_conatiner div {
-display: flex;
-align-items: center;
-margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
 }
 
 .No_geography_conatiner div:last-child {
-margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .No_geography_conatiner div p {
-margin: 0;
+    margin: 0;
 }
 
 .No_geography_conatiner div span {
-display: inline-block;
-width: 24px;
-height: 21px;
-background: #C9D4E0;
-margin-right: 12px;
+    display: inline-block;
+    width: 24px;
+    height: 21px;
+    background: #C9D4E0;
+    margin-right: 12px;
 }
 
 .top_third_block {
-align-self: flex-end;
-text-align: center;
-margin: 0 auto;
+    align-self: flex-end;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .top_third_block img {
-width: 30px;
-height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .top_third_block p {
-margin: 0;
-margin-top: 20px;
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 12px;
-line-height: 14px;
-text-align: center;
-width: 78px;
-color: #000000;
+    margin: 0;
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    width: 78px;
+    color: #000000;
 }
 
 .influencers_tab_3_container {
@@ -2439,7 +2450,9 @@ tbody {
 .p-break {
     background: #FFD706;
 }
-
+.side-bar {
+    margin-left:60px;
+}
 
 
 

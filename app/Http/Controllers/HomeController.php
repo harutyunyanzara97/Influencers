@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +27,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('clientDashboard');
+    }
+    public function chat()
+    {
+        return view('chat');
+    }
+
+    public function getFriends()
+    {
+        return UserResource::collection(User::where('id','!=', Auth::id())->get());
     }
 }

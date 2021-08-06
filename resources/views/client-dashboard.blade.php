@@ -1,4 +1,5 @@
-@include('layout.header')
+@include('layouts.app')
+
 <div class="modal fade" id="v-pills-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -51,64 +52,175 @@
 
 <div class="d-flex ava-new">
     <div id="left-sidebar-fix" class="left-sidebar-fix">
-        <div class="d-flex justify-content-center align-items-center flex-wrap  p-4">
+        <div class="flex-wrap  p-4">
             <a href="#">
-                <img src="{{asset('img/logo1.png')}}" width="34" height="34" alt="">
+                <img src="img/logo1.png" width="34" height="34" alt="" style="margin:0 auto;position: relative;left:48px">
             </a>
-        </div>
-        <div class="avatar-area d-flex justify-content-center flex-column">
-            <div class="avatar-img">
-
-                @if(Auth::user()->avatar_url)
-                    <img src="{{asset('img/'.Auth::user()->avatar_url)}}">
-                @endif
-
-                <div class="abs"></div>
-            </div>
-            <p class="fs-14-black p-13-20">{{Auth::user()->name}} <img src="" alt=""
-                                                                class="open-tab pointer ava-user"></p>
-        </div>
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-            <a class="nav-link text-left  d-block profile-tab account-tab" data-toggle="pill" href="#account-profile" role="tab"
-               aria-controls="account-profile" aria-selected="false">Account profile</a>
-            <a class="nav-link text-left  d-block billing"  href="">Billing details</a>
-            <a class="nav-link text-left payment  d-block" id=""  href="">Payment Plans</a>
-            <a class="nav-link  d-block " id="v-pills-profile-tab"   role="tab"
-               aria-controls="v-pills-profile" aria-selected="false">
-                <form>
-                <div class="d-flex">
-                    <input type="hidden" name="code" value="EAAKOjXPe6CkBAEQaEtyAHwZCbhFvdvbriTts0vjyJBX6xuHL3MSZAQeBWOeGKHqIjIyUf6fYQ7HCT6WV7llOi9qWOnBHwje8GwrZBuiaVkTD7zSiInqsoemDKEhkduZCxkOuFCjmBZB9hLCUNmPNosjDiM8UOqY5v6CwwuLE5oZCEsvg2lRq5biflcQkt49AHCqBwIL2nZAmmFwbR7XZBRPakW6eIXeQvf5Uyb9ekIDbUjkmPulUChbJ">
-                    <span class="icon-Group searchInfluencer">   Search</span>
-{{--                    <span class="nav-link-title search">  Search </span>--}}
-                </div>
-                </form>
-            </a>
-
-            <a class="nav-link d-block campaignsAndLists">
-                <span class="icon-teamwork-1">   Campaigns</span>
-            </a>
-
-            <a class="nav-link myLists d-block">
-                <span class="icon-List">     My Lists</span>
-            </a>
-            <a class="nav-link d-block contact">
-                <span class="icon-file-1">  Contact with influencer</span>
-            </a>
-                <a class="nav-link d-block logout"  href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+            <div>
+                <a href="javascript:void(0)" id="closebtn" class=" d-none" onclick="closeNav()">
+                    <img src="img/menu-bar.png" alt="" style="position:relative; left: 55px;bottom:-7px">
                 </a>
+                <span style="margin:0 auto;
+                position: relative;
+                    font-size: 30px;
+                    cursor: pointer;
+                    left: 55px;
+                    /* bottom: 10px; */
+                    ;" id="openbtn" onclick="openNav()">
+                    <img src="img/open-right-arrow.png" alt="">
+                </span>
+            </div>
+            <div class="avatar-area" style="position: relative;">
+                <div class="avatar-img">
+                    @auth
+                        @if(isset(Auth::user()->facebook))
+                            <img src="{{Auth::user()->avatar_url}}" class="avataImg">
+                        @else
+                            <img src="{{asset('img/'.Auth::user()->avatar_url)}}" alt="" width="100%">
+                        @endif
+                    @endauth
+                </div>
+                <p class="fs-14-black p-13-20">@auth {{Auth::user()->name}}@endauth <img src="img/arrow-down-small.png"
+                                                                                         alt=""
+                                                                                         style="float: right;margin-top: 5px;"
+                                                                                         class="open-tab pointer"></p>
+            </div>
+        </div>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="margin-left:60px;">
+
+            <a class="nav-link text-left  d-none profile-tab account-profile" href="#account-profile" role="tab"
+               aria-controls="account-profile" aria-selected="false">Account profile</a>
+            <a class="nav-link text-left billing d-none" id="billing-details-tab" data-toggle="pill"
+               href="#billing-details" role="tab" aria-controls="billing-details" aria-selected="false">Billing
+                details</a>
+            <a class="nav-link text-left payment d-none" id="payment-plans-tab" data-toggle="pill" href="#payment-plans"
+               role="tab" aria-controls="payment-plans" aria-selected="false">Payment Plans</a>
+            <a class="nav-link text-left d-none logout" data-toggle="pill" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+                {{ __('Sign out') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
 
 
+            {{--            <span class="nav-link-title search">  Search </span>--}}
+            <a class="nav-link campaignsAndLists d-block" aria-selected="true">
+                <div class="d-flex">
+                    <span class="icon-teamwork-1"></span>
+                    <span class="nav-link-title campaignsAndLists" style="margin-left:10px"> Campaigns</span>
+                </div>
+            </a>
+
+            <a class="nav-link  d-block searchInfluencer"  aria-selected="false">
+                <div class="d-flex">
+                    <span class="icon-Group"></span>
+                    <span class="nav-link-title" style="margin-left:10px"> Search </span>
+                </div>
+            </a>
+            {{--            <a class="nav-link  d-block" aria-selected="true">--}}
+            {{--            <div class="d-flex">--}}
+            {{--                <span class="icon-Group" style="margin-left:20px"></span>--}}
+            {{--                <input type="hidden" name="code"--}}
+            {{--                       value="EAAKOjXPe6CkBAEQaEtyAHwZCbhFvdvbriTts0vjyJBX6xuHL3MSZAQeBWOeGKHqIjIyUf6fYQ7HCT6WV7llOi9qWOnBHwje8GwrZBuiaVkTD7zSiInqsoemDKEhkduZCxkOuFCjmBZB9hLCUNmPNosjDiM8UOqY5v6CwwuLE5oZCEsvg2lRq5biflcQkt49AHCqBwIL2nZAmmFwbR7XZBRPakW6eIXeQvf5Uyb9ekIDbUjkmPulUChbJ">--}}
+            {{--                <span class="nav-link text-left searchInfluencer d-block" style="cursor: pointer;margin-left: -16px;--}}
+            {{--               margin-top: -11px;"> Search</span>--}}
+            {{--            </div>--}}
+            {{--            </a>--}}
+            {{--            <a class="nav-link  d-block " id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">--}}
+            {{--                <div class="d-flex">--}}
+            {{--                    <span class="icon-Group"></span>--}}
+            {{--                    <span class="nav-link-title"> Search </span>--}}
+            {{--                </div>--}}
+            {{--            </a>--}}
+            <a class="nav-link  d-block myLists" aria-selected="false">
+                <div class="d-flex">
+                    <span class="icon-List"></span>
+                    <span class="nav-link-title" style="cursor: pointer;margin-left: 30px">My Lists</span>
+                </div>
+            </a>
+            <a class="nav-link d-block" aria-selected="false">
+                <div class="d-flex">
+                    <span class="icon-Vector"></span>
+                    <span class="nav-link-title" style="cursor: pointer;margin-left:15px"> Bookmarks</span>
+                </div>
+            </a>
+            <a class="nav-link contact d-block" aria-selected="false">
+                <div class="d-flex">
+                    <span class="icon-file-1"></span>
+                    <span class="nav-link-title contact" style="cursor: pointer;margin-left:15px"> Campaign Report</span>
+                </div>
+            </a>
         </div>
     </div>
-    <div id="main" class="main-content">
+    {{--    <div id="left-sidebar-fix" class="left-sidebar-fix">--}}
+    {{--        <div class="d-flex justify-content-center align-items-center flex-wrap  p-4">--}}
+    {{--            <a href="#">--}}
+    {{--                <img src="{{asset('img/logo1.png')}}" width="34" height="34" alt="">--}}
+    {{--            </a>--}}
+    {{--        </div>--}}
+    {{--        <div class="avatar-area d-flex justify-content-center flex-column">--}}
+    {{--            <div class="avatar-img">--}}
+    {{--               @auth--}}
+    {{--                @if(Auth::user()->avatar_url)--}}
+    {{--                    <img src="{{asset('img/'.Auth::user()->avatar_url)}}">--}}
+    {{--                @endif--}}
+    {{--                    @endauth--}}
+    {{--                <div class="abs"></div>--}}
+    {{--            </div>--}}
+    {{--            @auth--}}
+    {{--            <p class="fs-14-black p-13-20">{{Auth::user()->name}} <img src="{{asset('img/arrow-down-small.png')}}" alt="" class="open-tab pointer ava-user"></p>--}}
+    {{--            @endauth--}}
+    {{--        </div>--}}
+
+    {{--        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">--}}
+    {{--            <a class="nav-link d-none text-left  profile-tab account-tab" data-toggle="pill" href="#account-profile" role="tab" aria-controls="account-profile" aria-selected="false">Account profile</a>--}}
+    {{--            <a class="nav-link d-none text-left billing" id="billing-details-tab" data-toggle="pill" href="#billing-details" role="tab" aria-controls="billing-details" aria-selected="false">Billing details</a>--}}
+    {{--            <a class="nav-link d-none text-left payment" id="payment-plans-tab" data-toggle="pill" href="#payment-plans" role="tab" aria-controls="payment-plans" aria-selected="false">Payment Plans</a>--}}
+
+    {{--            <a class="nav-link text-left  d-block profile-tab account-tab" data-toggle="pill" href="#account-profile" role="tab"--}}
+    {{--               aria-controls="account-profile" aria-selected="false">Account profile</a>--}}
+    {{--            <a class="nav-link text-left  d-block billing"  href="">Billing details</a>--}}
+    {{--            <a class="nav-link text-left payment  d-block" id=""  href="">Payment Plans</a>--}}
+    {{--                    <input type="hidden" name="code" value="EAAKOjXPe6CkBAEQaEtyAHwZCbhFvdvbriTts0vjyJBX6xuHL3MSZAQeBWOeGKHqIjIyUf6fYQ7HCT6WV7llOi9qWOnBHwje8GwrZBuiaVkTD7zSiInqsoemDKEhkduZCxkOuFCjmBZB9hLCUNmPNosjDiM8UOqY5v6CwwuLE5oZCEsvg2lRq5biflcQkt49AHCqBwIL2nZAmmFwbR7XZBRPakW6eIXeQvf5Uyb9ekIDbUjkmPulUChbJ">--}}
+    {{--                    <a class="nav-link text-left searchInfluencer d-block" style="cursor: pointer">   Search</a>--}}
+    {{--                    <span class="nav-link-title search">  Search </span>--}}
+
+
+
+    {{--            <a class="nav-link d-block campaignsAndLists">--}}
+    {{--                <span class="icon-teamwork-1">   Campaigns</span>--}}
+    {{--            </a>--}}
+
+    {{--            <a class="nav-link myLists d-block">--}}
+    {{--                <span class="icon-List">     My Lists</span>--}}
+    {{--            </a>--}}
+    {{--            <a class="nav-link d-block" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">--}}
+    {{--                <div class="d-flex">--}}
+    {{--                    <span class="icon-Vector"></span>--}}
+    {{--                    <span class="nav-link" style="margin-top:-10px"> Bookmarks</span>--}}
+    {{--                </div>--}}
+    {{--            </a>--}}
+    {{--            <a class="nav-link d-block contact">--}}
+    {{--                <span class="icon-file-1">  Contact with influencer</span>--}}
+    {{--            </a>--}}
+    {{--                <a class="nav-link d-block logout"  href="{{ route('logout') }}"--}}
+    {{--                   onclick="event.preventDefault();--}}
+    {{--                                                     document.getElementById('logout-form').submit();">--}}
+    {{--                    {{ __('Logout') }}--}}
+    {{--                </a>--}}
+
+    {{--                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+    {{--                    @csrf--}}
+    {{--                </form>--}}
+
+
+    {{--        </div>--}}
+    {{--    </div>--}}
+    <div id="main" class="main-content" style="margin-left: 260px;">
         <div class="content-header ">
             <div class="d-flex justify-content-between">
                 <div class="input-group m-0 header-input-section">
@@ -282,7 +394,7 @@
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between flex-wrap prof"
-                                 >
+                            >
                                 <div class="profileMenu--block">
                                     <img src="{{asset('img/Prof-img1.png')}}" alt="">
                                     <div class="abs">
@@ -336,7 +448,7 @@
 
             </div>
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active tab-account" >
+                <div class="tab-pane fade show active tab-account">
                     <div class="h-100 d-flex align-items-center flex-column justify-content-sm-center big">
                         <img src="{{asset('img/wlcome-icon.png')}}" alt="">
 
@@ -413,7 +525,6 @@
                 </div>
 
 
-
                 <div class="tab-pane fade p-22-32" id="v-pills-messages" role="tabpanel"
                      aria-labelledby="v-pills-messages-tab">
                     Tab 3
@@ -459,47 +570,85 @@
         <div class="overlay"></div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<!-- <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script> -->
-<script src="{{asset('js/clientDashboard.js')}}" type="text/javascript"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"--}}
+{{--        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"--}}
+{{--        crossorigin="anonymous"></script>--}}
+<!-- <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
+<!-- <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script> -->
+
+{{--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"--}}
+{{--        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"--}}
+{{--        crossorigin="anonymous"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"--}}
+{{--        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"--}}
+{{--        crossorigin="anonymous"></script>--}}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 <script src="{{asset('js/ststistics.js')}}"></script>
 <script src="{{asset('js/jquery/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('js/clientDashboard.js')}}" type="text/javascript"></script>
+
 
 <script>
     function openNav() {
         document.getElementById("left-sidebar-fix").classList.add("open-sidebar");
-        document.getElementById("main").style.marginLeft = "240px";
+
+        // document.getElementById("main").style.marginLeft = "240px";
         document.getElementById("openbtn").classList.add("d-none");
         document.getElementById("openbtn").classList.remove("d-block");
         document.getElementById("closebtn").classList.remove("d-none");
         document.getElementById("closebtn").classList.add("d-block");
+
     }
 
     function closeNav() {
         document.getElementById("left-sidebar-fix").classList.remove("open-sidebar");
-        document.getElementById("main").style.marginLeft = "80px";
+        // document.getElementById("main").style.marginLeft = "80px";
         document.getElementById("closebtn").classList.remove("d-block");
         document.getElementById("closebtn").classList.add("d-none");
         document.getElementById("openbtn").classList.add("d-block");
+        var c = document.getElementsByClassName("text-left");
+        for (i = 0; i < c.length; i++) {
+            c[i].classList.add("d-none");
+        }
     }
 
+    $(document).ready(function () {
+        $('.open-tab').click(function () {
+            if ($(this).hasClass('rotate')) {
+                $(".open-tab").css('transform', 'rotate(360deg)');
+                $(".open-tab").removeClass('rotate');
+                var c = document.getElementsByClassName("text-left");
+                for (i = 0; i < c.length; i++) {
+                    c[i].classList.add("d-none");
+                }
+
+            } else {
+                var c = document.getElementsByClassName("text-left");
+                for (i = 0; i < c.length; i++) {
+                    c[i].classList.remove("d-none");
+                }
+                $(".open-tab").css('transform', 'rotate(180deg)');
+                $(".open-tab").addClass('rotate');
+            }
+        })
+        $('.searchInfluencer').on('click', function (event) {
+            event.preventDefault();
+            $( this ).parent().find( 'a.active' ).removeClass( 'active' );
+            $( this ).addClass( 'active' );
+            $.ajax({
+                url: '/search-influencer',
+                method: "get",
+                data: {_token: $('meta[name="csrf-token"]').attr('content')},
+                success: (response) => {
+                    $("#main").html(response);
+                }
+            })
+        });
+    })
 
 
 </script>

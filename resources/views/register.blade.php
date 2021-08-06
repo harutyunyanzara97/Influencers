@@ -7,7 +7,9 @@
             <img src="img/photo.png"  alt="" class="img-fluid">
             <div class="rightSide-content d-flex flex-column">
                 <div class="flex-1">
-                    <a href="#" class="text-white fs-45">LOGO</a>
+                    <a href="#">
+                        <img src="{{asset('img/logo1.png')}}" width="34" height="34" alt="">
+                    </a>
                 </div>
                 <div>
                     <h1 class="fs-72-bold-white mb-5">Welcome to <br> company name!</h1>
@@ -20,7 +22,7 @@
         </div>
         <div class="flex-1 px-140">
             <h2 class="fs-24-bold-black mb-5">Logo is the smarter way to manage your <br> influencer marketing.</h2>
-            <form action="{{ route('register') }}" method="post" class="pt-2">
+            <form action="{{ route('signup') }}" method="post" class="pt-2">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -85,7 +87,7 @@
                     @enderror
                 </div>
                 <div class="py-4">
-                    <p class="fs-18-gray text-left">Already have a Scrunch account?<a href="{{url('/login')}}" class="color-red"> Log in</a></p>
+                    <p class="fs-18-gray text-left">Already have a Scrunch account?<a href="{{url('/login-influencer')}}" class="color-red"> Log in</a></p>
                 </div>
                 <div class="fs-14-gray mb-4">Profile Type</div>
                 <div class="d-flex justify-content-center">
@@ -119,9 +121,9 @@
                 </div>
                 <div class="text-center mt-4 relative">
                     <button type="submit" class="btn-red fs-23 text-white mx-3 mb-2">Sign Up</button>
-                    <div class="chat abs">
-                        <img src="img/supportChat.png" alt="">
-                    </div>
+                    <!--       <div class="chat abs">
+                               <img src="img/supportChat.png" alt="">
+                           </div> -->
                 </div>
 
             </form>

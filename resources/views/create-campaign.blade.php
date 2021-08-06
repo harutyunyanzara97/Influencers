@@ -1,56 +1,56 @@
 @extends('layouts.app')
+<div class="mt-5">
+    <form action="{{url('/store')}}" method="post" class="" enctype="multipart/form-data">
+        @csrf
+        <div  class="d-flex">
+            <div class="flex-1 px-4">
+                <div class="form-group">
+                    <label for="nameCampaign" class="fs-normal-12">Campaign Name:</label>
+                    <input type="text" class="form-control h--50 fs-14-black text-left" name="title" id="nameCampaign" placeholder="Campaign Name">
+                </div>
+                <div class="form-group">
+                    <label for="CampaignDetails" class="fs-normal-12">Creative</label>
+                    <input type="text" class="form-control h--50 fs-14-black text-left" name="details" id="CampaignDetails" placeholder="Creative">
+                </div>
+                <div class="form-group">
+                    <label for="CampaignCategory" class="fs-normal-12">Category</label>
+                    <br>
+                    <select name="category[]">
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="CampaignHashTags" class="fs-normal-12">Hashtags</label>
+                    <input type="text" class="form-control h--50 fs-14-black text-left" name="hashtags" id="CampaignHashTags" placeholder="hashtags">
+                </div>
+            </div>
+            <div class="flex-1 px-4">
+                <div class="form-group">
+                    <label for="CampaignCost" class="fs-normal-12">Budget</label>
+                    <input type="number" class="form-control h--50 fs-14-black text-left" name="per_post_rate" id="CampaignCost" placeholder="Budget">
+                </div>
 
-<form action="{{url('/store')}}" method="post" class="pb-4" enctype="multipart/form-data">
-                @csrf
-                <div  class="d-flex">
-                    <div class="flex-1 px-4">
-                        <div class="form-group">
-                            <label for="nameCampaign" class="fs-normal-12">Campaign Name:</label>
-                            <input type="text" class="form-control h--50 fs-14-black text-left" name="title" id="nameCampaign" placeholder="Campaign Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="CampaignDetails" class="fs-normal-12">Creative</label>
-                            <input type="text" class="form-control h--50 fs-14-black text-left" name="details" id="CampaignDetails" placeholder="Campaign Details">
-                        </div>
-                        <div class="form-group">
-                            <label for="CampaignCategory" class="fs-normal-12">Category</label>
-                            <br>
-                            <select name="category[]">
-                                @foreach($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="CampaignHashTags" class="fs-normal-12">Hashtags</label>
-                            <input type="text" class="form-control h--50 fs-14-black text-left" name="hashtags" id="CampaignHashTags" placeholder="Post famous words">
-                        </div>
-                    </div>
-                    <div class="flex-1 px-4">
-                        <div class="form-group">
-                            <label for="CampaignCost" class="fs-normal-12">Budget</label>
-                            <input type="number" class="form-control h--50 fs-14-black text-left" name="per_post_rate" id="CampaignCost" placeholder="Cost Per Post Rate">
-                        </div>
 
+                <div class="form-group">
+                    <label for="CampaignDate" class="fs-normal-12">Start Date and End Date</label>
+                    <input type="date" class="form-control h--50 fs-14-black text-left" name="start_date" id="CampaignDate" placeholder="Start Date">
+                    <input type="date" class="form-control h--50 fs-14-black text-left" name="end_date" id="CampaignDate" placeholder="End Date">
 
-                        <div class="form-group">
-                            <label for="CampaignDate" class="fs-normal-12">Start Date and End Date</label>
-                            <input type="date" class="form-control h--50 fs-14-black text-left" name="start_date" id="CampaignDate" placeholder="Start Date">
-                            <input type="date" class="form-control h--50 fs-14-black text-left" name="end_date" id="CampaignDate" placeholder="End Date">
-
-                        </div>
-                        <div class="form-group mt-4 pt-1 w-50">
-                            <div class="input-group my-3 px-2 py-2 bg-white border-input">
-                                <input id="upload" type="file" name="photo[]" onchange="readURL(this);" class="form-control">
-                                <label id="upload-label" for="upload" class="h--50 fs-14-black text-left text-muted">
-                                    <img src="img/photo-icon.png" alt="" class="mr-2">Upload Images (Not Mandatory)</label>
-                            </div>
-                        </div>
+                </div>
+                <div class="form-group mt-4 pt-1 w-50">
+                    <div class="input-group my-3 px-2 py-2 bg-white border-input">
+                        <input id="upload" type="file" name="photo[]" onchange="readURL(this);" class="form-control">
+                        <label id="upload-label" for="upload" class="h--50 fs-14-black text-left text-muted">
+                            <img src="img/photo-icon.png" alt="" class="mr-2">Upload Images (Not Mandatory)</label>
                     </div>
                 </div>
-                <button type="submit" class="btn-red mt-4 br-5 m-l--20">Submit</button>
-            </form>
-
+            </div>
+        </div>
+        <button type="submit" class="btn-red mt-4 br-5 m-l--20">Submit</button>
+    </form>
+</div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <!-- <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
@@ -80,9 +80,5 @@
         document.getElementById("closebtn").classList.add("d-none");
         document.getElementById("openbtn").classList.add("d-block");
     }
-
-
-
-
 </script>
 

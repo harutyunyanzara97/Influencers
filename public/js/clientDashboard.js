@@ -1,4 +1,7 @@
-
+$(".open-tab").on("click", function( ) {
+    $(".nav-link").toggleClass("d-none");
+    $(".open-tab").toggleClass("rotate180")
+});
 $(document).ready(function () {
     $(".list-see-more").on("click", function() {
         $(".card").css("display", "none");
@@ -11,6 +14,13 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function(){
+    $(".open-tab").on("click", function( ) {
+        $(".nav-link").toggleClass("d-none");
+        $(".open-tab").toggleClass("rotate180")
+    });
+
+});
 
 $(document).ready(function(){
     function readURL(input) {
@@ -31,7 +41,7 @@ $(document).ready(function(){
 
 
 
-/*statistic page start */
+    /*statistic page start */
 
 
     //wait till the page loads
@@ -108,12 +118,13 @@ $(document).ready(function(){
             }
         })
     });
-    $('.searchInfluencer').on('click', function (event) {
+
+    $('.searchAdverticer').on('click', function (event) {
         event.preventDefault();
         $( this ).parent().find( 'a.active' ).removeClass( 'active' );
         $( this ).addClass( 'active' );
         $.ajax({
-            url: '/search-influencer',
+            url: '/influencer',
             method: "get",
             data: {_token: $('meta[name="csrf-token"]').attr('content')},
             success: (response) => {

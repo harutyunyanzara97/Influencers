@@ -4,8 +4,8 @@
     <div id="statistics">
         <div class="statistics_header">
             <div class="statistics_header_left">
-                <a href="#"> Rebecca Zamoloimg <img src="img/Line%2079%20(1).png" alt=""></a>
-                <a href="#">  Start DateApr-23-2020 <span>Ended</span></a>
+                <a href="#"> {{$campaign->user->name}} <img src="img/Line%2079%20(1).png" alt=""></a>
+                <a href="#">  Start Date {{$campaign->start_date}} <span>Ended</span></a>
             </div>
             <div class="statistics_header_right">
                 <a href="#"><img src="img/share.svg" alt=""> Share</a>
@@ -13,51 +13,51 @@
         </div>
         <div class="row statistics_categories_container no-margin">
             <div class="blocks">
-                <h3 data-target=".bdcd-example-modal-lg" data-toggle="modal">Posts</h3>
-                <p>In the campaign</p>
-                <p class="number">0</p>
+                <h3 data-target=".bdcd-example-modal-lg" data-toggle="modal">Hashtags</h3>
+                <p>{{$campaign->hashtags}}</p>
+                {{--                <p>In the campaign</p>--}}
+                {{--                <p class="number">0</p>--}}
             </div>
             <div class="blocks">
-                <h3 class="btn" data-toggle="modal" data-target="#exampleModalCenter">Engagement</h3>
-                <p>In the campaign</p>
-                <p class="number">10% <span>AVG. ER%</span></p>
-                <div class="statistics_icons_blocks">
-                    <div>
-                        <img src="img/ant-design_play-circle-filled.svg" alt="">
-                        <p>3</p>
-                    </div>
-                    <div>
-                        <img src="img/like%201.svg" alt="">
-                        <p>20</p>
-                    </div>
-                    <div>
-                        <img src="img/message.svg" alt="">
-                        <p>1</p>
-                    </div>
-                </div>
+                <h3 class="btn" data-toggle="modal" data-target="#exampleModalCenter">Creative</h3>
+                <p class="ml-3">{{$campaign->details}}</p>
+                {{--                <p>In the campaign</p>--}}
+                {{--                <p class="number">10% <span>AVG. ER%</span></p>--}}
+                {{--                <div class="statistics_icons_blocks">--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/ant-design_play-circle-filled.svg" alt="">--}}
+                {{--                        <p>3</p>--}}
+                {{--                    </div>--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/like%201.svg" alt="">--}}
+                {{--                        <p>20</p>--}}
+                {{--                    </div>--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/message.svg" alt="">--}}
+                {{--                        <p>1</p>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div>
             <div class="blocks">
                 <h3 class="budget_link" data-target=".bdc-example-modal-lg" data-toggle="modal">Campaign <br> Budget</h3>
-                <p class="number" style="margin-top:18px!important;">0 <span>AVG. ER%</span></p>
-                <div class="statistics_icons_blocks">
-                    <div>
-                        <img src="img/ant-design_play-circle-filled.svg" alt="">
-                        <p>$0.00</p>
-                    </div>
-                    <div>
-                        <img src="img/like%201.svg" alt="">
-                        <p>$0.00</p>
-                    </div>
-                    <div>
-                        <img src="img/message.svg" alt="">
-                        <p>$0.00</p>
-                    </div>
-                </div>
+                <p class="number" style="margin-top:18px!important;">{{$campaign->per_post_rate}} <span>AVG. ER%</span></p>
+                {{--                <div class="statistics_icons_blocks">--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/ant-design_play-circle-filled.svg" alt="">--}}
+                {{--                        <p>$0.00</p>--}}
+                {{--                    </div>--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/like%201.svg" alt="">--}}
+                {{--                        <p>$0.00</p>--}}
+                {{--                    </div>--}}
+                {{--                    <div>--}}
+                {{--                        <img src="img/message.svg" alt="">--}}
+                {{--                        <p>$0.00</p>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div>
             <div class="blocks">
-                <h3 data-toggle="modal" data-target=".bd-example-modal-lg">Participating Influencers</h3>
                 <div class="participating_block">
-                    <p class="number">1</p>
                     <div class="participating_block-content">
                         <img src="img/Ellipse%2025.png" alt="">
                         <div>
@@ -442,7 +442,106 @@
 
         </div>
     </div>
-
+    {{--                        <div id="Lists" class="tab-pane fade active show">--}}
+    {{--                            <div class="d-flex ">--}}
+    {{--                                <div class="card">--}}
+    {{--                                    <div class="roboto-18-gray mb-3">Favorites List</div>--}}
+    {{--                                    <img src="img/insta-logo.png" alt="" width="18" height="18">--}}
+    {{--                                    <div class="roboto-16 my-2">Favorites List</div>--}}
+    {{--                                    <div class="roboto-12 mb-1">1 Influencer</div>--}}
+    {{--                                    <div class="d-flex justify-content-end">--}}
+    {{--                                        <button class="gray-bordered-btn list-see-more">See More <img src="img/see-more-icon.png" alt="" width="13" height="13" class="ml-1"></button>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <div class="card">--}}
+    {{--                                    <div class="roboto-18-gray mb-3">Favorites List</div>--}}
+    {{--                                    <img src="img/insta-logo.png" alt="" width="18" height="18">--}}
+    {{--                                    <div class="roboto-16 my-2">Nina Mendes</div>--}}
+    {{--                                    <div class="roboto-12 mb-2">1 Influencer</div>--}}
+    {{--                                    <div class="d-flex justify-content-end">--}}
+    {{--                                        <button class="gray-bordered-btn list-see-more">See More <img src="img/see-more-icon.png" alt="" width="13" height="13" class="ml-1"></button>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                            <div class="more-list-card">--}}
+    {{--                                <div class="d-flex">--}}
+    {{--                                    <div class="d-flex bg-white" style="border: 1px solid #BFC5CF;">--}}
+    {{--                                        <div>--}}
+    {{--                                            <a href="profile.blade.php"><img src="img/cba7c99d-de72-4072-95a6-8223b3d646c2%201%20(1).png" alt=""></a>--}}
+    {{--                                        </div>--}}
+    {{--                                        <div>--}}
+    {{--                                            <div class="py-2 px-3">--}}
+    {{--                                                <div class="d-flex justify-content-between fs-16 mb-2">--}}
+    {{--                                                    <a href="profile.blade.php">Rebeca Zamolo</a>--}}
+    {{--                                                    <button class="bg-transparent border-0">--}}
+    {{--                                                        <img src="img/carbon_delete.png" alt="" width="15" height="15" class="pointer">--}}
+    {{--                                                    </button>--}}
+    {{--                                                </div>--}}
+    {{--                                                <div class="d-flex mb-4">--}}
+    {{--                                                    <button class="btn-red-bordered mr-2 size-75-23 fs-12">Music</button>--}}
+    {{--                                                    <button class="btn-red-bordered mr-2 size-75-23 fs-12">Dance</button>--}}
+    {{--                                                    <button class="btn-red-bordered mr-2 size-75-23 fs-12">Humor</button>--}}
+    {{--                                                </div>--}}
+    {{--                                                <div class="d-flex">--}}
+    {{--                                                    <div class="d-flex flex-1 mr-3">--}}
+    {{--                                                        <div class="d-flex flex-column">--}}
+    {{--                                                            <div class="d-flex align-items-baseline">--}}
+    {{--                                                                <div class="mr-2">--}}
+    {{--                                                                    <img src="img/youtube1.png" alt="">--}}
+    {{--                                                                </div>--}}
+    {{--                                                                <div class="d-flex fs-12">--}}
+    {{--                                                                    <div class="mr-2">6.1M <br> Followers</div>--}}
+    {{--                                                                    <div class="white-space-nowrap">6.34% <br> Engagement rate</div>--}}
+    {{--                                                                </div>--}}
+    {{--                                                            </div>--}}
+    {{--                                                            <div class="d-flex align-items-baseline">--}}
+    {{--                                                                <div class="mr-2">--}}
+    {{--                                                                    <img src="img/fb1.png" alt="">--}}
+    {{--                                                                </div>--}}
+    {{--                                                                <div class="d-flex fs-12">--}}
+    {{--                                                                    <div class="mr-2">6.1M <br> Followers</div>--}}
+    {{--                                                                    <div class="white-space-nowrap">6.34% <br> Engagement rate</div>--}}
+    {{--                                                                </div>--}}
+    {{--                                                            </div>--}}
+    {{--                                                        </div>--}}
+    {{--                                                    </div>--}}
+    {{--                                                    <div class="d-flex flex-1">--}}
+    {{--                                                        <div class="d-flex flex-column">--}}
+    {{--                                                            <div class="d-flex align-items-baseline">--}}
+    {{--                                                                <div class="mr-2">--}}
+    {{--                                                                    <img src="img/insta1.png" alt="">--}}
+    {{--                                                                </div>--}}
+    {{--                                                                <div class="d-flex fs-12">--}}
+    {{--                                                                    <div class="mr-2">6.1M <br> Followers</div>--}}
+    {{--                                                                    <div class="white-space-nowrap">6.34% <br> Engagement rate</div>--}}
+    {{--                                                                </div>--}}
+    {{--                                                            </div>--}}
+    {{--                                                            <div class="d-flex align-items-baseline">--}}
+    {{--                                                                <div class="mr-2">--}}
+    {{--                                                                    <img src="img/twitter1.png" alt="">--}}
+    {{--                                                                </div>--}}
+    {{--                                                                <div class="d-flex fs-12">--}}
+    {{--                                                                    <div class="mr-2">6.1M <br> Followers</div>--}}
+    {{--                                                                    <div class="white-space-nowrap">6.34% <br> Engagement rate</div>--}}
+    {{--                                                                </div>--}}
+    {{--                                                            </div>--}}
+    {{--                                                        </div>--}}
+    {{--                                                    </div>--}}
+    {{--                                                </div>--}}
+    {{--                                                <div class="d-flex justify-content-end mt-3">--}}
+    {{--                                                    <button class="color-red fs-12 border-0 ml-2 bg-transparent">--}}
+    {{--                                                        <img src="img/export-icon.png" alt="" width="14" height="14" class="mr-1">--}}
+    {{--                                                        Export</button>--}}
+    {{--                                                    <button class="color-red fs-12 border-0 ml-2 bg-transparent">--}}
+    {{--                                                        <img src="img/share-icon.png" alt="" width="14" height="14" class="mr-1">--}}
+    {{--                                                        Share</button>--}}
+    {{--                                                </div>--}}
+    {{--                                            </div>--}}
+    {{--                                        </div>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
     <div id="campaigns" class="tab-pane fade" style="margin-left: 32px">
         <form action="" class="w-75">
             <div class="">
@@ -482,5 +581,4 @@
         </form>
     </div>
 </div>
-</body>
-</html>
+<script src="{{asset('ststictics.js')}}"></script>

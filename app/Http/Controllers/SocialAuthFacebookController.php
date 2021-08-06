@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+
 use App\Models\User;
 use App\Services\SocialFacebookAccountService;
 use function Symfony\Component\Translation\t;
@@ -37,6 +38,7 @@ class SocialAuthFacebookController extends Controller
     {
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
         Auth::login($user,true);
+
         return view('client-dashboard', compact('user', $user));
     }
 

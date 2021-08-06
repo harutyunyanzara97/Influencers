@@ -26,6 +26,8 @@ class User extends Authenticatable
         'phone',
         'location',
         'avatar_url',
+        'payment_info',
+        'billing_email',
         'gender',
         'category',
         'facebook_id',
@@ -63,5 +65,17 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Campaign::class, 'ratings', 'leader_id', 'rater_id');
     }
+    public function facebook() {
 
+        return $this->hasOne(SocialFacebookAccount::class,'provider_user_id','id');
+
+    }
+    public function plan() {
+
+        return $this->hasOne(Plan::class,'user_id');
+    }
+    public function networks() {
+
+        return $this->hasMany(Network::class,'user_id');
+    }
 }

@@ -38,7 +38,13 @@ return [
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'useTLS' => true,
+                'encrypted' => true,
             ],
+        ],
+
+        'redis' => [
+            'driver' => 'redis',
+            'connection' => 'default',
         ],
 
         'ably' => [
@@ -46,10 +52,6 @@ return [
             'key' => env('ABLY_KEY'),
         ],
 
-        'redis' => [
-            'driver' => 'redis',
-            'connection' => 'default',
-        ],
 
         'log' => [
             'driver' => 'log',
