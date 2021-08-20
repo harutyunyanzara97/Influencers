@@ -61,63 +61,68 @@
                 </div>
                 <button class="btn-red br-5 max-w--110 h--45" data-toggle="modal" data-target="#stripeModal">Add</button>
             </div>
-            <div class="modal fade" id="stripeModal" tabindex="-1" role="dialog" aria-labelledby="ModalInfo"  aria-hidden="true">
+            <div class="modal fade" id="stripeModal" tabindex="-1" role="dialog" aria-labelledby="ModalInfo">
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document" style=" height: 450px !important;
-                        margin: auto;
-                         position: absolute !important;
-                        left: 0;
-                        right: 0;
-                        max-width: 500px;
-                        bottom: 0;
-                        top: 0;
-                        border-radius: 10px;">
-                    <div class="modal-content pb-5 pt-4" style="height: 500px">
+                     margin: auto;
+                     position: absolute !important;
+                     left: 0;
+                     right: 0;
+                     max-width: 500px;
+                     bottom: 0;
+                     top: 0;
+                     border-radius: 10px;">
+                    <div class="modal-content pb-5 pt-4" style="height: 500px;">
                         <div class="modal-header border-0">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        {{--                        <div class="cards">--}}
+                        <div class="cards">
 
-                        {{--                            @foreach($cards as $card)--}}
-                        {{--                                <div class="card-i">--}}
-                        {{--                                    <div class="bank-name" title="BestBank">{{$card->brand}}</div>--}}
-                        {{--                                    <div class="chip">--}}
-                        {{--                                        <div class="side left"></div>--}}
-                        {{--                                        <div class="side right"></div>--}}
-                        {{--                                        <div class="vertical top"></div>--}}
-                        {{--                                        <div class="vertical bottom"></div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="data">--}}
-                        {{--                                        <div class="pan" title="4123 4567 8910 1112">{{$card->card_number}}</div>--}}
-                        {{--                                        <div class="exp-date-wrapper">--}}
-                        {{--                                            <div class="left-label">EXPIRES END</div>--}}
-                        {{--                                            <div class="exp-date">--}}
-                        {{--                                                <div class="upper-labels">MONTH/YEAR</div>--}}
-                        {{--                                                <div class="date" title="01/17">{{$card->exp_month}}/{{substr($card->exp_year, -2)}}</div>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="name-on-card" title="John Doe">@if(Auth::user()->name && Auth::user()->surname){{Auth::user()->name - Auth::user()->surname}}@endif</div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="lines-down"></div>--}}
-                        {{--                                    <div class="lines-up"></div>--}}
-                        {{--                                </div>--}}
+                            @foreach($cards as $card)
+                                <div class="card-i">
+                                    <div class="bank-name" title="BestBank">{{$card->brand}}</div>
+                                    <div class="chip">
+                                        <div class="side left"></div>
+                                        <div class="side right"></div>
+                                        <div class="vertical top"></div>
+                                        <div class="vertical bottom"></div>
+                                    </div>
+                                    <div class="data">
+                                        <div class="pan" title="4123 4567 8910 1112">{{$card->card_number}}</div>
+                                        <div class="exp-date-wrapper">
+                                            <div class="left-label">EXPIRES END</div>
+                                            <div class="exp-date">
+                                                <div class="upper-labels">MONTH/YEAR</div>
+                                                <div class="date" title="01/17">{{$card->exp_month}}/{{substr($card->exp_year, -2)}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="name-on-card" title="John Doe">@if(Auth::user()->name && Auth::user()->surname){{Auth::user()->name - Auth::user()->surname}}@endif</div>
+                                    </div>
+                                    <div class="lines-down"></div>
+                                    <div class="lines-up"></div>
+                                </div>
 
-                        {{--                            @endforeach--}}
-                        {{--                        </div>--}}
+                            @endforeach
+                        </div>
 
-                        <div class="modal-body payment-body" style="overflow:hidden;">
+                        <div class="modal-body payment-body">
                             <div id="card-errors" role="alert"></div>
                             <div class="card">
 
                                 <div class="card-body">
 
-                                    <form id="payment-form" action="{{ route('stripe.create') }}" method="post">
+                                    <form id="payment-form" action="{{ route('stripe.create') }}" method="post"
+                                          data-cc-on-file="false"
+                                          data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
+                                          class="require-validation" style="height: 100px">
+
                                         @csrf
-                                        <div class='form-row row'>
+                                        <div class='form-row row'>ss
                                             <div class='col-xs-12 form-group required'>
                                                 <label class='control-label'>Name on Card</label> <input
-                                                    class='form-control name' size='4' type='text' name="name">
+                                                    class='form-control' size='4' type='text' name="name">
                                             </div>
                                         </div>
 
